@@ -1,0 +1,15 @@
+Package: signal
+Type: Package
+Title: Signal processing
+Version: 0.5
+Date: 2006-11-30
+Author: Tom Short <tshort@eprisolutions.com>
+Maintainer: Tom Short <tshort@eprisolutions.com>
+Depends: stats, graphics, grDevices, MASS
+Description: A set of generally Matlab/Octave-compatible signal processing
+  functions. Includes filter generation utilities, filtering functions,
+  resampling routines, and visualization of filter models. It also
+  includes interpolation functions and some Matlab compatability
+  functions.
+License: GNU GPL v2.0 or greater
+Packaged: Thu Nov 30 13:10:43 2006; ptsh003
