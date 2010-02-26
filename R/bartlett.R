@@ -30,16 +30,14 @@
 ## Description: Coefficients of the Bartlett (triangular) window
 
 bartlett  <- function(n) {
-
-  if (! (length(n) == 1 && (n == round(n)) && (n > 0)))
-    stop("bartlett: n has to be an integer > 0")
-
+  if (!(length(n) == 1 && (n == round(n)) && (n > 0)))
+    stop("n has to be an integer > 0")
   if (n == 1)
-    c = 1
+    c <- 1
   else {
-    n = n - 1
-    m = trunc(n / 2)
-    c = c(2*(0:m)/n, 2 - 2*((m+1):n)/n)
+    n <- n - 1
+    m <- trunc(n / 2)
+    c <- c(2*(0:m)/n, 2 - 2*((m+1):n)/n)
   }
   c
 }

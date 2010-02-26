@@ -39,14 +39,14 @@ decimate <- function(x, q, n = if (ftype == "iir") 8 else 30, ftype = "iir")  {
   if (q != round(q))
     stop("decimate only works with integer q.")
 
-  fir = ftype == 'fir'
+  fir <- ftype == 'fir'
 
   if (fir) {
-    b = fir1(n, 1/q)
-    y = fftfilt(b, x)
+    b <- fir1(n, 1/q)
+    y <- fftfilt(b, x)
   } else {
-    y = filtfilt(cheby1(n, 0.05, 0.8/q), x)
+    y <- filtfilt(cheby1(n, 0.05, 0.8/q), x)
   }
-  y = y[seq(1, length(x), by = q)]
+  
+  y[seq(1, length(x), by = q)]
 }
-

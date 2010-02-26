@@ -60,9 +60,9 @@ needed there.
 \seealso{ \code{\link{filter}}, \code{\link{Arma}}, \code{\link{freqz}}
 }
 \examples{
-b = c(1, 2)
-a = c(1, 1)
-w = linspace(0, 4, 128)
+b <- c(1, 2)
+a <- c(1, 1)
+w <- linspace(0, 4, 128)
 freqs(b, a, w)
 }
 \keyword{ math }

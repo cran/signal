@@ -6,7 +6,6 @@
 \alias{logseq}
 \alias{m2R}
 \alias{ncauer}
-\alias{ellipke}
 \alias{cheb}
 \alias{nextpow2}
 \alias{postpad}

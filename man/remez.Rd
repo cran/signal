@@ -20,14 +20,12 @@ remez(n, f, a, w = rep(1.0, length(f) / 2),
      constructed. The minimum value is 16, but higher numbers are
      slower to compute.}
 }
-\details{
-}
 \value{
   The FIR filter coefficients, an array of \code{length(n+1)}, of class \code{Ma}.
 }
 \references{
-  Rabiner, L. R., McClellan, J. H., and Parks, T. W., "FIR Digital Filter
-  Design Techniques Using Weighted Chebyshev Approximations," IEEE Proceedings,
+  Rabiner, L. R., McClellan, J. H., and Parks, T. W., \dQuote{FIR Digital Filter
+  Design Techniques Using Weighted Chebyshev Approximations}, IEEE Proceedings,
   vol. 63, pp. 595 - 610, 1975.
   
 \url{http://en.wikipedia.org/wiki/Fir_filter} 
@@ -40,7 +38,7 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{filter}}, \code{\link{Ma}},
 \code{\link{fftfilt}}, \code{\link{fir1}} }
 \examples{
-f1 = remez(15, c(0,0.3,0.4,1), c(1,1,0,0))
+f1 <- remez(15, c(0, 0.3, 0.4, 1), c(1, 1, 0, 0))
 freqz(f1)
 }
 \keyword{ math }

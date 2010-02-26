@@ -19,6 +19,6 @@ polyval(coef, z)
 \seealso{ \code{\link{poly}}, \code{\link{roots}}
 }
 \examples{
-polyval(c(1,0,-2), 1:3)  # s^2 - 2 
+polyval(c(1, 0, -2), 1:3)  # s^2 - 2 
 }
 \keyword{ math }

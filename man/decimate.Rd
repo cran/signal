@@ -35,10 +35,10 @@ Octave Forge \url{http://octave.sf.net}
 # how it follows the curve nicely in the slowly varying early
 # part of the signal, but averages the curve in the quickly
 # varying late part of the signal.
-t = seq(0, 2, by = 0.01)
-x = chirp(t,2,.5,10,'quadratic') + sin(2*pi*t*0.4)
-y = decimate(x,4)   # factor of 4 decimation
+t <- seq(0, 2, by = 0.01)
+x <- chirp(t, 2, 0.5, 10, 'quadratic') + sin(2*pi*t*0.4)
+y <- decimate(x, 4)   # factor of 4 decimation
 plot(t, x, type = "l")
-lines(t[seq(1,length(t),by = 4)], y, col = "blue")
+lines(t[seq(1,length(t), by = 4)], y, col = "blue")
 }
 \keyword{ math }

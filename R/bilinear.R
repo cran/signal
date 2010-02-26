@@ -78,11 +78,10 @@ bilinear.Arma <- function(Sz, T, ...)
   as.Arma(bilinear(as.Zpg(Sz, T)))
 
 bilinear.default <- function(Sz, Sp, Sg, T, ...)  { 
-
-  p = length(Sp)
-  z = length(Sz)
+  p <- length(Sp)
+  z <- length(Sz)
   if (z > p || p == 0)
-    stop("bilinear: must have at least as many poles as zeros in s-plane")
+    stop("must have at least as many poles as zeros in s-plane")
 
 ## ----------------  -------------------------  ------------------------
 ## Bilinear          zero: (2+xT)/(2-xT)        pole: (2+xT)/(2-xT)
@@ -90,14 +89,13 @@ bilinear.default <- function(Sz, Sp, Sg, T, ...)  {
 ## S -> - ---        gain: (2-xT)/T             gain: (2-xT)/T
 ##      T z+1
 ## ----------------  -------------------------  ------------------------
-  Zg = Re(Sg * prod((2-Sz*T)/T) / prod((2-Sp*T)/T))
-  Zp = (2+Sp*T) / (2-Sp*T)
+  Zg <- Re(Sg * prod((2-Sz*T)/T) / prod((2-Sp*T)/T))
+  Zp <- (2+Sp*T) / (2-Sp*T)
   if (is.null(Sz))
-    Zz = -array(1, length(Zp))
+    Zz <- -array(1, length(Zp))
   else {
-    Zz = (2+Sz*T) / (2-Sz*T)
-    Zz = c(Zz, array(-1, p - z))
+    Zz <- (2+Sz*T) / (2-Sz*T)
+    Zz <- c(Zz, array(-1, p - z))
   } 
-
   Zpg(zero = Zz, pole = Zp, gain = Zg)
 } 

@@ -7,11 +7,8 @@
 \usage{
 Ma(b)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{b}{ moving average (MA) polynomial coefficients }
-}
-\details{
 }
 \value{
   A list with the MA polynomial coefficients of class \code{Ma}.

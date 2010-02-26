@@ -41,11 +41,11 @@ Octave Forge \url{http://octave.sf.net}
  Conversion to R by Tom Short. }
 \seealso{ \code{\link{Ma}}, \code{\link{filter}}, \code{\link{fft}}, \code{\link{filtfilt}} }
 \examples{
-t = seq(0, 1, len=100)                       # 1 second sample
-x = sin(2*pi*t*2.3) + 0.25*rnorm(length(t))  # 2.3 Hz sinusoid+noise
-z = fftfilt(rep(1, 10)/10, x) # apply 10-point averaging filter
+t <- seq(0, 1, len = 100)                     # 1 second sample
+x <- sin(2*pi*t*2.3) + 0.25*rnorm(length(t))  # 2.3 Hz sinusoid+noise
+z <- fftfilt(rep(1, 10)/10, x) # apply 10-point averaging filter
 plot(t, x, type = "l")
-lines(t, z, col="red")
+lines(t, z, col = "red")
 
 }
 \keyword{ math }

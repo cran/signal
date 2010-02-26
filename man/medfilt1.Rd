@@ -38,8 +38,8 @@ MedianFilter(n = 3)
 \author{ Tom Short. }
 \seealso{ \code{\link{runmed}}, \code{\link{median}}, \code{\link{filter}} }
 \examples{
-t = seq(0, 1, len=100)                           # 1 second sample
-x = sin(2*pi*t*2.3) + 0.25*rlnorm(length(t),.5)  # 2.3 Hz sinusoid+noise
+t <- seq(0, 1, len=100)                            # 1 second sample
+x <- sin(2*pi*t*2.3) + 0.25*rlnorm(length(t), 0.5) # 2.3 Hz sinusoid+noise
 plot(t, x, type = "l")
 # 3-point filter
 lines(t, medfilt1(x), col="red", lwd=2) 

@@ -44,16 +44,19 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{approx}}, \code{\link{filter}},
   \code{\link{resample}}, \code{\link{interp}}, \code{\link{spline}}  }
 \examples{
-xf = linspace(0,11,500); yf = sin(2*pi*xf/5)
-#xp = c(0:1,3:10); yp = sin(2*pi*xp/5)
-xp = c(0:10); yp = sin(2*pi*xp/5)
-extrap = TRUE
-lin  = interp1(xp, yp, xf, 'linear', extrap = extrap)
-spl  = interp1(xp, yp, xf, 'spline', extrap = extrap)
-pch  = interp1(xp, yp, xf, 'pchip', extrap = extrap)
-cub  = interp1(xp, yp, xf, 'cubic', extrap = extrap)
-near = interp1(xp, yp, xf, 'nearest', extrap = extrap)
-plot(xp, yp, xlim=c(0,11))
+xf <- linspace(0,11,500)
+yf <- sin(2*pi*xf/5)
+#xp <- c(0:1,3:10)
+#yp <- sin(2*pi*xp/5)
+xp <- c(0:10)
+yp <- sin(2*pi*xp/5)
+extrap <- TRUE
+lin  <- interp1(xp, yp, xf, 'linear', extrap = extrap)
+spl  <- interp1(xp, yp, xf, 'spline', extrap = extrap)
+pch  <- interp1(xp, yp, xf, 'pchip', extrap = extrap)
+cub  <- interp1(xp, yp, xf, 'cubic', extrap = extrap)
+near <- interp1(xp, yp, xf, 'nearest', extrap = extrap)
+plot(xp, yp, xlim = c(0, 11))
 lines(xf, lin, col = "red")
 lines(xf, spl, col = "green")
 lines(xf, pch, col = "orange")

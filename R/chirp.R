@@ -40,27 +40,29 @@
 ## 2001-08-31 Paul Kienzle <pkienzle@users.sf.net>
 ## * Fix documentation for quadratic case
 
-chirp <- function( t, f0 = 0, t1 = 1, f1 = 100, form = c("linear", "quadratic", "logarithmic"), phase = 0)  {
+chirp <- function(t, f0 = 0, t1 = 1, f1 = 100, 
+                  form = c("linear", "quadratic", "logarithmic"), phase = 0){
 
-  form = match.arg(form)
+  form <- match.arg(form)
+  phase <- 2*pi*phase/360
 
-  phase = 2*pi*phase/360
-
-  if (form == "linear") {
-    a = pi*(f1 - f0)/t1
-    b = 2*pi*f0
-    y = cos(a*t^2 + b*t + phase)
-  } else if (form == "quadratic") {
-    a = (2/3*pi*(f1-f0)/t1/t1)
-    b = 2*pi*f0
-    y = cos(a*t^3 + b*t + phase)
-  } else { # "logarithmic"
-    a = 2*pi * t1 / log(f1 - f0)
-    b = 2*pi * f0
-    x = (f1-f0)^(1/t1)
-    y = cos(a*x^t + b*t + phase)
-  }
-  y
+  switch(form,
+    "linear" = {
+        a <- pi*(f1 - f0)/t1
+        b <- 2*pi*f0
+        cos(a*t^2 + b*t + phase)
+    },
+    "quadratic" = {
+        a <- (2/3*pi*(f1-f0)/t1/t1)
+        b <- 2*pi*f0
+        cos(a*t^3 + b*t + phase)
+    },
+    "logarithmic" = {
+        a <- 2*pi * t1 / log(f1 - f0)
+        b <- 2*pi * f0
+        x <- (f1-f0)^(1/t1)
+        cos(a*x^t + b*t + phase)
+    })
 }
 
 #!demo

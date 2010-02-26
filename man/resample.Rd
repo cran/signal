@@ -40,11 +40,13 @@ New York: IEEE Press.
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }
 \seealso{ \code{\link{filter}}, \code{\link{decimate}}, \code{\link{interp}} }
 \examples{
-xf=seq(0,10.95,by=0.05); yf = sin(2*pi*xf/5)
-xp=0:10;      yp = sin(2*pi*xp/5)
-r = resample(yp,xp[2],xf[2])
+xf <- seq(0, 10.95, by=0.05)
+yf <- sin(2*pi*xf/5)
+xp <- 0:10
+yp <- sin(2*pi*xp/5)
+r <- resample(yp, xp[2], xf[2])
 title("confirm that the resampled function matches the original")
-plot(xf,yf, type = "l", col = "blue")
+plot(xf, yf, type = "l", col = "blue")
 lines(xf, r[1:length(xf)], col = "red")
 points(xp,yp, pch = 19, col = "blue")
 legend("bottomleft", c("Original", "Resample", "Data"),

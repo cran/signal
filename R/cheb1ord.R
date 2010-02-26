@@ -35,48 +35,47 @@
 cheb1ord <- function(Wp, Ws, Rp, Rs)  {
 
   if (length(Wp) != length(Ws))
-    stop("cheb1ord: Wp and Ws must have the same length")
+    stop("Wp and Ws must have the same length")
   if (length(Wp) != 1 && length(Wp) != 2)
-    stop("cheb1ord: Wp,Ws must have length 1 or 2")
+    stop("Wp,Ws must have length 1 or 2")
   if (length(Wp) == 2 && (all(Wp>Ws) || all(Ws>Wp) || diff(Wp)<=0 || diff(Ws)<=0))
-    stop("cheb1ord: Wp[1]<Ws[1]<Ws[2]<Wp[2] or Ws[1]<Wp[1]<Wp[2]<Ws[2]")
+    stop("Wp[1]<Ws[1]<Ws[2]<Wp[2] or Ws[1]<Wp[1]<Wp[2]<Ws[2]")
 
-  T = 2
+  T <- 2
 
   ## returned frequency is the same as the input frequency
-  Wc = Wp
+  Wc <- Wp
 
   ## warp the target frequencies according to the bilinear transform
-  Ws = (2/T) * tan(pi *  Ws / T)
-  Wp = (2/T) * tan(pi * Wp / T)
+  Ws <- (2/T) * tan(pi *  Ws / T)
+  Wp <- (2/T) * tan(pi * Wp / T)
 
   if (Wp[1] < Ws[1]) {
     ## low pass
     if (length(Wp) == 1) {
-      Wa = Ws/Wp
-      type = "low"
+      Wa <- Ws/Wp
+      type <- "low"
     } else {
       ## band reject
-      type = "stop"
-      stop("band reject is not implement yet.")
+      type <- "stop"
+      stop("band reject is not implement yet")
     }
   } else {
    ## if high pass, reverse the sense of the test
     if (length(Wp) == 1) {
-      type = "high"
-      Wa = Wp/Ws
+      type <- "high"
+      Wa <- Wp/Ws
     } else {
-      type = "pass"
+      type <- "pass"
       ## band pass 
-      Wa=(Ws^2 - Wp[1]*Wp[2]) / (Ws*(Wp[1]-Wp[2]))
+      Wa<-(Ws^2 - Wp[1]*Wp[2]) / (Ws*(Wp[1]-Wp[2]))
     } 
   } 
-  Wa = min(abs(Wa))
+  Wa <- min(abs(Wa))
   
   ## compute minimum n which satisfies all band edge conditions
-  stop_atten = 10^(abs(Rs)/10)
-  pass_atten = 10^(abs(Rp)/10)
-  n = ceiling(acosh(sqrt((stop_atten-1) / (pass_atten-1))) / acosh(Wa))
+  stop_atten <- 10^(abs(Rs)/10)
+  pass_atten <- 10^(abs(Rp)/10)
+  n <- ceiling(acosh(sqrt((stop_atten-1) / (pass_atten-1))) / acosh(Wa))
   FilterOfOrder(n = n, Wc = Wc, type = type, Rp = Rp)
 } 
-

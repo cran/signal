@@ -58,34 +58,34 @@
 chebwin  <- function(n, at)  {
 
   if (!(length(n) == 1 && (n == round(n)) && (n > 0)))
-    stop("chebwin: n has to be a positive integer")
+    stop("n has to be a positive integer")
   if (!(length(at) == 1 && (at == Re(at))))
-    stop("chebwin: at has to be a real scalar")
+    stop("at has to be a real scalar")
   
   if (n == 1)
-    w = 1
+    w <- 1
   else {
     # beta calculation
-    gamma = 10^(-at/20)
-    beta = cosh(1/(n-1) * acosh(1/gamma))
+    gamma <- 10^(-at/20)
+    beta <- cosh(1/(n-1) * acosh(1/gamma))
     # freq. scale
-    k = 0:(n-1)
-    x = beta*cos(pi*k/n)
+    k <- 0:(n-1)
+    x <- beta*cos(pi*k/n)
     # Chebyshev window (freq. domain)
-    p = cheb(n-1, x)
+    p <- cheb(n-1, x)
     # inverse Fourier transform
     if (n %% 2) {
-      w = Re(fft(p))
-      M = (n+1)/2
-      w = w[1:M] / w[1]
-      w = c(w[M:2], w)
+      w <- Re(fft(p))
+      M <- (n+1)/2
+      w <- w[1:M] / w[1]
+      w <- c(w[M:2], w)
     } else {
       # half-sample delay (even order)
-      p = p * exp(1i*pi/n * (0:(n-1)))
-      w = Re(fft(p))
-      M = n / 2 + 1
-      w = w/w[2]
-      w = c(w[M:2], w[2:M])
+      p <- p * exp(1i*pi/n * (0:(n-1)))
+      w <- Re(fft(p))
+      M <- n / 2 + 1
+      w <- w/w[2]
+      w <- c(w[M:2], w[2:M])
     }
   }
   w
@@ -127,17 +127,16 @@ cheb  <- function(n, x)  {
   if (!(is.numeric(n) && (n == round(n)) && (n >= 0)))
     stop("n has to be a positive integer")
 
-  T = array(0., length(x))
+  T <- array(0., length(x))
   
-  ind = x <= 1
+  ind <- x <= 1
   if (any(ind))
-    T[ind] = cos(n * acos(as.complex(x[ind])))
+    T[ind] <- cos(n * acos(as.complex(x[ind])))
 
-  ind = x > 1
-  myacosh = function(x) log(x + sqrt(x^2 - 1)) # workaround for a win32 bug in acosh
+  ind <- x > 1
+  myacosh <- function(x) log(x + sqrt(x^2 - 1)) # workaround for a win32 bug in acosh
   if (any(ind))
-    T[ind] = cosh(n * myacosh(as.complex(x[ind])))
+    T[ind] <- cosh(n * myacosh(as.complex(x[ind])))
 
   Re(T)
 } 
-

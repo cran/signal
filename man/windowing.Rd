@@ -63,8 +63,8 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{filter}}, \code{\link{fftfilt}},
   \code{\link{filtfilt}}, \code{\link{fir1}}  }
 \examples{
-n = 51
-op = par(mfrow=c(3,3))
+n <- 51
+op <- par(mfrow = c(3,3))
 plot(bartlett(n), type = "l", ylim = c(0,1))
 plot(blackman(n), type = "l", ylim = c(0,1))
 plot(boxcar(n), type = "l", ylim = c(0,1))

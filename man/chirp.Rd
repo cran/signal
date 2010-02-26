@@ -2,8 +2,7 @@
 \alias{chirp}
 \title{ A chirp signal }
 \description{
-Generate a chirp signal.  A chirp signal is a frequency
-swept cosine wave.
+Generate a chirp signal.  A chirp signal is a frequency swept cosine wave.
 }
 \usage{
 chirp(t, f0 = 0, t1 = 1, f1 = 100, form = c("linear", "quadratic", "logarithmic"), phase = 0)
@@ -40,12 +39,12 @@ Octave Forge \url{http://octave.sf.net}
   Conversion to R by Tom Short. }
 \seealso{ \code{\link{specgram}} }
 \examples{
-ch = chirp(seq(0, .6, len=5000))
+ch <- chirp(seq(0, 0.6, len=5000))
 plot(ch, type = "l")
 
 # Shows a quadratic chirp of 400 Hz at t=0 and 100 Hz at t=10
 # Time goes from -2 to 15 seconds.
-specgram(chirp(seq(-2, 15, by=.001), 400, 10, 100, "quadratic"))
+specgram(chirp(seq(-2, 15, by=0.001), 400, 10, 100, "quadratic"))
 
 # Shows a logarithmic chirp of 200 Hz at t=0 and 500 Hz at t=2
 # Time goes from 0 to 5 seconds at 8000 Hz.

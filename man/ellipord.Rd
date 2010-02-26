@@ -20,8 +20,6 @@ ellipord(Wp, Ws, Rp, Rs)
   \item{Rp}{ allowable decibels of ripple in the pass band. }
   \item{Rs}{ minimum attenuation in the stop band in dB. }
 }
-\details{
-}
 \value{
   An object of class \code{FilterOfOrder} with the following list elements:
   \item{n}{ filter order }
@@ -32,7 +30,7 @@ ellipord(Wp, Ws, Rp, Rs)
   This object can be passed directly to \code{ellip} to compute discrete filter coefficients.
 }
 \references{
-  Lamar, Marcus Vinicius, Notas de aula da disciplina TE 456 - Circuitos Analogicos II, UFPR, 2001/2002.
+Lamar, Marcus Vinicius, Notas de aula da disciplina TE 456 - Circuitos Analogicos II, UFPR, 2001/2002.
 
 Octave Forge \url{http://octave.sf.net}
 
@@ -43,17 +41,17 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{Arma}}, \code{\link{filter}}, \code{\link{butter}},
   \code{\link{cheby1}}, and \code{\link{ellipord}}}
 \examples{
-Fs = 10000
-elord = ellipord(1000/(Fs/2), 1200/(Fs/2), 0.5, 29)
+Fs <- 10000
+elord <- ellipord(1000/(Fs/2), 1200/(Fs/2), 0.5, 29)
 plot(c(0, 1000, 1000, 0, 0), c(0, 0, -0.5, -0.5, 0),
      type = "l", xlab = "Frequency (Hz)", ylab = "Attenuation (dB)")
-el1 = ellip(elord)
+el1 <- ellip(elord)
 plot(c(0, 1000, 1000, 0, 0), c(0, 0, -0.5, -0.5, 0),
      type = "l", xlab = "Frequency (Hz)", ylab = "Attenuation (dB)",
      col = "red", ylim = c(-35,0), xlim = c(0,2000))
 lines(c(5000, 1200, 1200, 5000, 5000), c(-1000, -1000, -29, -29, -1000),
       col = "red")
-hf = freqz(el1, Fs = Fs)
+hf <- freqz(el1, Fs = Fs)
 lines(hf$f, 20*log10(abs(hf$h)))
 }
 \keyword{ math }

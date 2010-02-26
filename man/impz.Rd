@@ -54,9 +54,9 @@ needed there.
  Conversion to R by Tom Short. }
 \seealso{ \code{\link{filter}}, \code{\link{freqz}}, \code{\link{zplane}} }
 \examples{
-bt = butter(5, .3)
+bt <- butter(5, 0.3)
 impz(bt)
-impz(ellip(5, .5, 30, .3))
+impz(ellip(5, 0.5, 30, 0.3))
 }
 \keyword{ math }
 

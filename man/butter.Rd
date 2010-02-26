@@ -48,7 +48,7 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{Arma}}, \code{\link{filter}}, \code{\link{cheby1}},
   \code{\link{ellip}}, and \code{\link{buttord}}}
 \examples{
-  bf = butter(4, 0.1)
+  bf <- butter(4, 0.1)
   freqz(bf)
   zplane(bf)
 }

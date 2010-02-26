@@ -42,7 +42,7 @@ The bilinear transform is:
 Please note that a pole and a zero at the same place exactly cancel.
 This is significant since the bilinear transform creates numerous
 extra poles and zeros, most of which cancel. Those which do not
-cancel have a "fill-in" effect, extending the shorter of the sets to
+cancel have a \dQuote{fill-in} effect, extending the shorter of the sets to
 have the same number of as the longer of the sets of poles and zeros
 (or at least split the difference in the case of the band pass
 filter). There may be other opportunistic cancellations, but it will
@@ -57,12 +57,12 @@ not be a problem.
 }
 \value{
   For the default case or for \code{bilinear.Zpg}, an object of class
-  "Zpg", containing the list elements:
+  \dQuote{Zpg}, containing the list elements:
   \item{zero }{complex vector of the zeros of the transformed model}
   \item{pole }{complex vector of the poles of the transformed model}
   \item{gain }{gain of the transformed model}
   For \code{bilinear.Arma}, an object of class
-  "Arma", containing the list elements:
+  \dQuote{Arma}, containing the list elements:
   \item{b}{ moving average (MA) polynomial coefficients }
   \item{a}{ autoregressive (AR) polynomial coefficients }
 }
@@ -78,8 +78,4 @@ not be a problem.
 
 \seealso{ \code{\link{Zpg}}, \code{\link{sftrans}},
   \code{\link{Arma}}}
-\examples{
-
-
-}
 \keyword{ math }

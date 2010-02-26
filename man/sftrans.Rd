@@ -62,7 +62,7 @@ Band-Pass Transform
 
 \tabular{ll}{
 Zero at x                         \tab Pole at x                 \cr
-zero: \eqn{b ± sqrt(b^2-F_hF_l)}  \tab \eqn{b ± sqrt(b^2-F_hF_l)}\cr
+zero: \eqn{b \pm \sqrt(b^2-F_hF_l)}\tab \eqn{b \pm \sqrt(b^2-F_hF_l)}\cr
 pole: \eqn{0}                     \tab \eqn{0}                   \cr 
 gain: \eqn{C/(F_h-F_l)}           \tab \eqn{(F_h-F_l)/C}         \cr
 \eqn{b = x/C (F_h-F_l)/2}         \tab \eqn{b=x/C (F_h-F_l)/2}   \cr
@@ -72,8 +72,8 @@ Band-Stop Transform
 \deqn{S -> C \frac{S(F_h-F_l)}{S^2+F_hF_l}}
 \tabular{ll}{
 Zero at x                         \tab Pole at x                 \cr
-zero: \eqn{b ± sqrt(b^2-F_hF_l)}  \tab \eqn{b ± sqrt(b^2-F_hF_l)}\cr
-pole: \eqn{±sqrt(-F_hF_l)}        \tab \eqn{±sqrt(-F_hF_l)}      \cr 
+zero: \eqn{b \pm \sqrt(b^2-F_hF_l)}\tab \eqn{b \pm \sqrt(b^2-F_hF_l)}\cr
+pole: \eqn{\pm \sqrt(-F_hF_l)}     \tab \eqn{\pm \sqrt(-F_hF_l)}      \cr 
 gain: \eqn{-x}                    \tab \eqn{-1/x}                \cr
 \eqn{b = C/x (F_h-F_l)/2}         \tab \eqn{b=C/x (F_h-F_l)/2}   \cr
 }

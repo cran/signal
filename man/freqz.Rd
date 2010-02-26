@@ -36,7 +36,7 @@ Compute the z-plane frequency response of an ARMA model or IIR filter.
   \item{a}{ the autoregressive (recursive) coefficients of an ARMA filter. }
   \item{n}{ number of points at which to evaluate the frequency response. }
   \item{region}{ \code{'half'} (the default) to evaluate around the upper half of the
-    unit circle or \code{whole'} to evaluate around the entire unit circle. }
+    unit circle or \code{'whole'} to evaluate around the entire unit circle. }
   \item{Fs}{ sampling frequency in Hz. If not specified, the frequencies
     are in radians. }
   \item{w}{ for the default case, the array of frequencies. Generically,
@@ -62,8 +62,8 @@ needed there.
 }
 \value{
   For \code{freqz} list of class \code{freqz} with items:
-  \item{h }{array of frequencies. }
-  \item{f }{complex array of frequency responses at those frequencies.}
+  \item{h}{array of frequencies. }
+  \item{f}{complex array of frequency responses at those frequencies.}
 
 }
 \references{ 
@@ -73,8 +73,8 @@ needed there.
 \seealso{ \code{\link{filter}}, \code{\link{Arma}}, \code{\link{freqs}}
 }
 \examples{
-b = c(1,0,-1)
-a = c(1,0,0,0,0.25)
+b <- c(1, 0, -1)
+a <- c(1, 0, 0, 0, 0.25)
 freqz(b, a)
 }
 \keyword{ math }

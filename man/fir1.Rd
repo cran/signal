@@ -23,10 +23,8 @@ fir1(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"), window = ham
     the magnitude of the center of the first passband to 1, and
     \code{FALSE} or \code{'noscale'} to not normalize.}
 }
-\details{
-}
 \value{
-  The FIR filter coefficients, an array of length(n+1), of class \code{Ma}.
+  The FIR filter coefficients, an array of \code{length(n+1)}, of class \code{Ma}.
 }
 \references{
 
@@ -39,8 +37,8 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{filter}}, \code{\link{Ma}},
 \code{\link{fftfilt}}, \code{\link{fir2}} }
 \examples{
-freqz(fir1(40,0.3))
-freqz(fir1(10,c(0.3, .5), "stop"))
-freqz(fir1(10,c(0.3, .5), "pass"))
+freqz(fir1(40, 0.3))
+freqz(fir1(10, c(0.3, 0.5), "stop"))
+freqz(fir1(10, c(0.3, 0.5), "pass"))
 }
 \keyword{ math }

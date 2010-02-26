@@ -19,10 +19,7 @@
 ## Returns the filter coefficients of a rectangular window of length n.
 
 boxcar  <- function(n)  {
-  
   if (length(n) > 1 || n != floor(n) || n <= 0)
-    stop("boxcar:  n must be an integer > 0")
-
-  w = array(1, n)
-  w
+    stop("n must be an integer > 0")
+  array(1, n)
 } 

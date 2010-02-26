@@ -25,8 +25,8 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{polyval}}, \code{\link{roots}}, \code{\link{conv}}
 }
 \examples{
-poly(c(1,-1))
+poly(c(1, -1))
 poly(roots(1:3))
-poly(matrix(1:9,3,3))
+poly(matrix(1:9, 3, 3))
 }
 \keyword{ math }

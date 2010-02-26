@@ -54,15 +54,15 @@ butter.FilterOfOrder <- function(n, ...)
 
 butter.default <- function(n, W, type = c("low", "high", "stop", "pass"), plane = c("z", "s"), ...) {
 
-  type = match.arg(type)
-  plane = match.arg(plane)
+  type <- match.arg(type)
+  plane <- match.arg(plane)
 
   ## interpret the input parameters
   if (!(length(n)==1 && n == round(n) && n > 0))
     stop("butter: filter order n must be a positive integer")
 
-  stop = type == "stop" || type == "high"
-  digital = plane == "z"
+  stop <- type == "stop" || type == "high"
+  digital <- plane == "z"
 
   if (length(W) != 1 && length(W) != 2)
     stop("butter: frequency must be given as w0 or c(w0, w1)")
@@ -74,27 +74,27 @@ butter.default <- function(n, W, type = c("low", "high", "stop", "pass"), plane 
 
   ## Prewarp to the band edges to s plane
   if (digital) {
-    T = 2       # sampling frequency of 2 Hz
-    W = 2 / T*tan(pi * W / T)
+    T <- 2       # sampling frequency of 2 Hz
+    W <- 2 / T*tan(pi * W / T)
   }
 
   ## Generate splane poles for the prototype butterworth filter
   ## source: Kuc
-  C = 1 # default cutoff frequency
-  pole = C*exp(1i*pi*(2*1:n + n - 1) / (2*n))
+  C <- 1 # default cutoff frequency
+  pole <- C*exp(1i*pi*(2*1:n + n - 1) / (2*n))
   if (n %% 2 == 1)
-    pole[(n+1) / 2] = -1  # pure real value at exp(i*pi)
-  zero = array(0., 0)
-  gain = C^n
+    pole[(n+1) / 2] <- -1  # pure real value at exp(i*pi)
+  zero <- array(0., 0)
+  gain <- C^n
 
-  ZPG = Zpg(zero = zero, pole = pole, gain = gain)
+  ZPG <- Zpg(zero = zero, pole = pole, gain = gain)
 
   ## s-plane frequency transform
-  ZPG = sftrans(ZPG, W = W, stop = stop)
+  ZPG <- sftrans(ZPG, W = W, stop = stop)
 
   ## Use bilinear transform to convert poles to the z plane
   if (digital)
-     ZPG = bilinear(ZPG, T = T)
+     ZPG <- bilinear(ZPG, T = T)
 
   as.Arma(ZPG)
 } 

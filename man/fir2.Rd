@@ -21,8 +21,6 @@ fir2(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n + 1))
     but has better stopband characteristics. }
   \item{window}{ smoothing window. The returned filter is the same shape as the smoothing window. }
 }
-\details{
-}
 \value{
   The FIR filter coefficients, an array of length(n+1), of class \code{Ma}.
 }
@@ -34,10 +32,10 @@ Octave Forge \url{http://octave.sf.net}
 \seealso{ \code{\link{filter}}, \code{\link{Ma}},
 \code{\link{fftfilt}}, \code{\link{fir1}} }
 \examples{
-f = c(0, 0.3, 0.3, 0.6, 0.6, 1)
-m = c(0, 0, 1, 1/2, 0, 0)
-fh = freqz(fir2(100, f, m))
-op = par(mfrow=c(1,2))
+f <- c(0, 0.3, 0.3, 0.6, 0.6, 1)
+m <- c(0, 0, 1, 1/2, 0, 0)
+fh <- freqz(fir2(100, f, m))
+op <- par(mfrow = c(1, 2))
 plot(f, m, type = "b", ylab = "magnitude", xlab = "Frequency")
 lines(fh$f / pi, abs(fh$h), col = "blue")
 # plot in dB:

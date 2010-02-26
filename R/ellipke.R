@@ -42,52 +42,52 @@
 
 ellipke <- function(m) {
 
-  k = e = array(0, dim(m))
+  k <- e <- array(0, dim(m))
   if (!any(is.real(m)))
     stop("ellipke must have real m")
   if (any(m > 1))
     stop("ellipke must have m <= 1")
 
-  Nmax = 16
-  idx = which(m == 1)
+  Nmax <- 16
+  idx <- which(m == 1)
   if (length(idx) > 0) {
-    k[idx] = Inf
-    e[idx] = 1.0
+    k[idx] <- Inf
+    e[idx] <- 1.0
   }
       
   idx = which(m == -Inf)
   if (length(idx) > 0) {
-    k[idx] = 0.0
-    e[idx] = Inf
+    k[idx] <- 0.0
+    e[idx] <- Inf
   }
 
   ## Arithmetic-Geometric Mean (AGM) algorithm
   ## ( Abramowitz and Stegun, Section 17.6 )
-  idx = which(m != 1 & m != -Inf)
+  idx <- which(m != 1 & m != -Inf)
   if (length(idx) > 0) {
-    idx_neg = which(m < 0 & m != -Inf)
-    mult_k = 1 / sqrt(1 - m[idx_neg])
-    mult_e = sqrt(1 - m[idx_neg])
-    m[idx_neg] = -m[idx_neg] / (1 - m[idx_neg])
-    a = matrix(1, length(idx),1)
-    b = sqrt(1.0 - m[idx])
-    c = sqrt(m[idx])
-    f = 0.5
-    sum = f*c^2
+    idx_neg <- which(m < 0 & m != -Inf)
+    mult_k <- 1 / sqrt(1 - m[idx_neg])
+    mult_e <- sqrt(1 - m[idx_neg])
+    m[idx_neg] <- -m[idx_neg] / (1 - m[idx_neg])
+    a <- matrix(1, length(idx),1)
+    b <- sqrt(1.0 - m[idx])
+    c <- sqrt(m[idx])
+    f <- 0.5
+    sum <- f*c^2
     for ( n  in  2:Nmax) {
-      t = (a + b) / 2
-      c = (a - b) / 2
-      b = sqrt(a * b)
-      a = t
-      f = f * 2
-      sum = sum + f * c^2
+      t <- (a + b) / 2
+      c <- (a - b) / 2
+      b <- sqrt(a * b)
+      a <- t
+      f <- f * 2
+      sum <- sum + f * c^2
       if (all(c/a < eps)) break
     } 
     if (n >= Nmax) stop("ellipke: not enough workspace")
-    k[idx] = 0.5*pi / a
-    e[idx] = 0.5*pi * (1.0 - sum) / a
-    k[idx_neg] = mult_k * k[idx_neg]
-    e[idx_neg] = mult_e * e[idx_neg]
+    k[idx] <- 0.5*pi / a
+    e[idx] <- 0.5*pi * (1.0 - sum) / a
+    k[idx_neg] <- mult_k * k[idx_neg]
+    e[idx_neg] <- mult_e * e[idx_neg]
   }
   list(k = k, e = e)
 } 

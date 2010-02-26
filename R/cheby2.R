@@ -53,15 +53,15 @@ cheby2.FilterOfOrder <- function(n, ...)
 
 cheby2.default <- function(n, Rp, W, type = c("low", "high", "stop", "pass"), plane = c("z", "s"), ...) {
 
-  type = match.arg(type)
-  plane = match.arg(plane)
+  type <- match.arg(type)
+  plane <- match.arg(plane)
 
   ## interpret the input parameters
   if (!(length(n)==1 && n == round(n) && n > 0))
     stop("cheby2: filter order n must be a positive integer")
 
-  stop = type == "stop" || type == "high"
-  digital = plane == "z"
+  stop <- type == "stop" || type == "high"
+  digital <- plane == "z"
 
   if (length(W) != 1 && length(W) != 2)
     stop("cheby2: frequency must be given as w0 or c(w0, w1)")
@@ -76,41 +76,41 @@ cheby2.default <- function(n, Rp, W, type = c("low", "high", "stop", "pass"), pl
 
   ## Prewarp to the band edges to s plane
   if (digital) {
-    T = 2       # sampling frequency of 2 Hz
-    W = 2 / T*tan(pi * W / T)
+    T <- 2       # sampling frequency of 2 Hz
+    W <- 2 / T*tan(pi * W / T)
   }
 
   ## Generate splane poles and zeros for the chebyshev type 2 filter
   ## From: Stearns, SD; David, RA; (1988). Signal Processing Algorithms. 
   ##       New Jersey: Prentice-Hall.
-  C = 1 			# default cutoff frequency
-  lambda = 10^(Rp/20)
-  phi = log(lambda + sqrt(lambda^2-1))/n
-  theta = pi*((1:n) - 0.5)/n
-  alpha = -sinh(phi)*sin(theta)
-  beta = cosh(phi)*cos(theta)
+  C <- 1             # default cutoff frequency
+  lambda <- 10^(Rp/20)
+  phi <- log(lambda + sqrt(lambda^2-1))/n
+  theta <- pi*((1:n) - 0.5)/n
+  alpha <- -sinh(phi)*sin(theta)
+  beta <- cosh(phi)*cos(theta)
   if (n %% 2)
     ## drop theta==pi/2 since it results in a zero at infinity
-    zero = 1i * C / cos(theta[c(1:((n-1)/2), ((n+3)/2):n)])
+    zero <- 1i * C / cos(theta[c(1:((n-1)/2), ((n+3)/2):n)])
   else
-   zero = 1i * C / cos(theta)
-  pole = C / (alpha^2 + beta^2) * (alpha - 1i*beta)
+   zero <- 1i * C / cos(theta)
+  pole <- C / (alpha^2 + beta^2) * (alpha - 1i*beta)
 
   ## Compensate for amplitude at s=0
   ## Because of the vagaries of floating point computations, the
   ## prod(pole)/prod(zero) sometimes comes out as negative and
   ## with a small imaginary component even though analytically
   ## the gain will always be positive, hence the abs(real(...))
-  gain = abs(Re(prod(pole) / prod(zero)))
+  gain <- abs(Re(prod(pole) / prod(zero)))
 
-  ZPG = Zpg(zero = zero, pole = pole, gain = gain)
+  ZPG <- Zpg(zero = zero, pole = pole, gain = gain)
 
   ## s-plane frequency transform
-  ZPG = sftrans(ZPG, W = W, stop = stop)
+  ZPG <- sftrans(ZPG, W = W, stop = stop)
 
   ## Use bilinear transform to convert poles to the z plane
   if (digital)
-     ZPG = bilinear(ZPG, T = T)
+     ZPG <- bilinear(ZPG, T = T)
 
   as.Arma(ZPG)
 }

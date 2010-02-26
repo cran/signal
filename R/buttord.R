@@ -46,47 +46,40 @@ buttord <- function(Wp, Ws, Rp, Rs)  {
   if (length(Wp) == 2 && (all(Wp>Ws) || all(Ws>Wp) || diff(Wp)<=0 || diff(Ws)<=0))
     stop("Wp(1)<Ws(1)<Ws(2)<Wp(2) or Ws(1)<Wp(1)<Wp(2)<Ws(2)")
 
-  T = 2
+  T <- 2
   
   ## if high pass, reverse the sense of the test
-  stop = which(Wp > Ws)
-  Wp[stop] = 1 - Wp[stop]   # stop will be at most length 1, so no need to
-  Ws[stop] = 1 - Ws[stop]   # subtract from matrix(1, 1,length(stop))
+  stop <- which(Wp > Ws)
+  Wp[stop] <- 1 - Wp[stop]   # stop will be at most length 1, so no need to
+  Ws[stop] <- 1 - Ws[stop]   # subtract from matrix(1, 1,length(stop))
 
   if (length(Wp) == 2) {
     warning("buttord seems to overdesign bandpass and bandreject filters")
-    if (any(stop))
-      type = "stop"
-    else
-      type = "pass"
+    type <- if (any(stop)) "stop" else "pass"
   } else {
-    if (any(stop))
-      type = "high"
-    else
-      type = "low"
+    type <- if (any(stop)) "high" else "low"
   }
 
-  if (any(stop)) type = ""
-      
+  if (any(stop)) type <- ""
+
   ## warp the target frequencies according to the bilinear transform
-  Ws = (2/T) * tan(pi * Ws / T)
-  Wp = (2/T) * tan(pi * Wp / T)
+  Ws <- (2/T) * tan(pi * Ws / T)
+  Wp <- (2/T) * tan(pi * Wp / T)
   
   ## compute minimum n which satisfies all band edge conditions
   ## the factor 1/length(Wp) is an artificial correction for the
   ## band pass/stop case, which otherwise significantly overdesigns.
-  qs = log(10^(Rs/10) - 1)
-  qp = log(10^(Rp/10) - 1)
-  n = ceiling(max(0.5*(qs - qp) / log(Ws/Wp)) /length(Wp))
+  qs <- log(10^(Rs/10) - 1)
+  qp <- log(10^(Rp/10) - 1)
+  n <- ceiling(max(0.5*(qs - qp) / log(Ws/Wp)) /length(Wp))
 
   ## compute -3dB cutoff given Wp, Rp and n
-  Wc = exp(log(Wp) - qp/2/n)
+  Wc <- exp(log(Wp) - qp/2/n)
 
   ## unwarp the returned frequency
-  Wc = atan(T/2*Wc)*T/pi
+  Wc <- atan(T/2*Wc)*T/pi
   
   ## if high pass, reverse the sense of the test
-  Wc[stop] = 1 - Wc[stop]
+  Wc[stop] <- 1 - Wc[stop]
   FilterOfOrder(n = n, Wc = Wc, type = type)
 } 
-

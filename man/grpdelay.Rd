@@ -34,7 +34,7 @@
   \item{n}{ number of points at which to evaluate the frequency response. }
   \item{whole}{ \code{'half'} or \code{FALSE} (the default) to evaluate
     around the upper half of the
-    unit circle or \code{whole'} to evaluate around the entire unit circle. }
+    unit circle or \code{'whole'} to evaluate around the entire unit circle. }
   \item{Fs}{ sampling frequency in Hz. If not specified, the frequencies
     are in radians. }
   \item{x}{ object to be plotted. }
@@ -78,8 +78,8 @@ inside loops and function calls, so explicit calls to \code{print} or
 }
 \examples{
 # Two Zeros and Two Poles
-b = poly(c(1/0.9*exp(1i*pi*0.2), 0.9*exp(1i*pi*0.6)))
-a = poly(c(0.9*exp(-1i*pi*0.6), 1/0.9*exp(-1i*pi*0.2)))
+b <- poly(c(1/0.9*exp(1i*pi*0.2), 0.9*exp(1i*pi*0.6)))
+a <- poly(c(0.9*exp(-1i*pi*0.6), 1/0.9*exp(-1i*pi*0.2)))
 grpdelay(b, a, 512, 'whole', 1)
 }
 \keyword{ math }
