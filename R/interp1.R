@@ -120,8 +120,8 @@
 ##  elseif strcmp(method, 'linear')
 ##    ## find the interval containing the test point
 ##    idx = lookup(x[2:(nx-1)], xi) + 1
-##    			# 2:(n-1) so that anything beyond the ends
-##    			# gets dumped into an interval
+##              # 2:(n-1) so that anything beyond the ends
+##              # gets dumped into an interval
 ##    ## use the endpoints of the interval to define a line
 ##    dy = y(2:ny,:) - y(1:ny-1,:)
 ##    dx = x(2:nx) - x(1:nx-1)
@@ -162,7 +162,7 @@
 ##    c=(diff(y(1:nx-2,:),1) - a.*dx3(:,J) - b.*dx2(:,J))./dx(i,J)
 ##    d=y(i,:) - ((a.*x(i,J) + b).*x(i,J) + c).*x(i,J)
 ##    yi(range,:) = ((a(idx,:).*xi(:,J) + b(idx,:)).*xi(:,J) ...
-##    	   + c(idx,:)).*xi(:,J) + d(idx,:)
+##         + c(idx,:)).*xi(:,J) + d(idx,:)
 ##
 ##  elseif strcmp(method, '*cubic')
 ##    if (nx < 4 || ny < 4)
@@ -182,7 +182,7 @@
 ##    d = (t2 - 1).*t/6
 ##    J = matrix(1, 1,nc)
 ##    yi(range,:) = a(:,J) .* y(idx,:) + b(:,J) .* y(idx+1,:) ...
-##    	  + c(:,J) .* y(idx-1,:) + d(:,J) .* y(idx+2,:)
+##        + c(:,J) .* y(idx-1,:) + d(:,J) .* y(idx+2,:)
 ##
 ##  elseif strcmp(method, 'spline') || strcmp(method, '*spline')
 ##    if (nx == 2) x = linspace(minx, maxx, ny); } #if
@@ -195,61 +195,68 @@
 ##
 ##} #function
 
-interp1 <- function(x, y, xi, method = c('linear', 'nearest', 'pchip', 'cubic', 'spline'), extrap = NA, ...) {
-  method = match.arg(method)
-  lookup = function(x, xi)
-    approx(x, 1:length(x), xi, method="constant", yleft=0, yright=length(x))$y
+interp1 <- function(x, y, xi, 
+    method = c('linear', 'nearest', 'pchip', 'cubic', 'spline'), 
+    extrap = NA, ...) 
+{
+  method <- match.arg(method)
+  lookup <- function(x, xi)
+    approx(x, seq_along(x), xi, method = "constant", yleft = 0, yright = length(x))$y
   
-  ny = length(y)
-  nx = length(x)
+  ny <- length(y)
+  nx <- length(x)
 
   if (isTRUE(extrap == "extrap") || isTRUE(extrap)) {
-    range = 1:length(xi)
-    yi = array(0., length(xi))
+    range <- seq_along(xi)
+    yi <- array(0, length(xi))
   } else {
-    range = which(xi >= min(x) & xi <= max(x))
-    yi = array(extrap, length(xi))
-    xi = xi[range]
+    range <- which(xi >= min(x) & xi <= max(x))
+    yi <- array(extrap, length(xi))
+    xi <- xi[range]
   }
 
-  if (method == "linear") {
-    idx = lookup(x[2:(nx-1)], xi) + 1
-				# 2:(n-1) so that anything beyond the ends
-				# gets dumped into an interval
-    ## use the endpoints of the interval to define a line
-    dy = y[2:ny] - y[1:(ny-1)]
-    dx = x[2:nx] - x[1:(nx-1)]
-    s = (xi - x[idx]) / dx[idx]
-    yi[range] = s * dy[idx] + y[idx]
-    #yi = approx(x, y, xi, ties = "ordered", ...)$y
-  }
-  if (method == "nearest")
-    yi[range] = approx(c(x[1],x+c(diff(x)/2,0)), c(y[1],y), xi, method = "constant", f=1)$y
-  if (method == "spline")
-    yi[range] = splinefun(x, y, ...)(xi)
-  if (method == "pchip")
-    yi[range] = pchip(x, y, xi) 
-  if (method == "cubic") {
-    if (nx < 4 || ny < 4)
-      stop("interp1: table too short")
-    idx = lookup(x[3:(nx-2)], xi) + 1
-
-    ## Construct cubic equations for each interval using divided
-    ## differences (computation of c and d don't use divided differences
-    ## but instead solve 2 equations for 2 unknowns). Perhaps
-    ## reformulating this as a lagrange polynomial would be more efficient.
-
-    i = 1:(nx-3)
-    dx = diff(x)
-    dx2 = x[i+1]^2 - x[i]^2
-    dx3 = x[i+1]^3 - x[i]^3
-    a = diff(y,diff=3) / dx[i]^3 / 6
-    b = (diff(y[1:(nx-1)],diff=2) / dx[i]^2 - 6*a*x[i+1])/2
-    c = (diff(y[1:(nx-2)]) - a*dx3 - b*dx2) / dx[i]
-    d = y[i] - ((a*x[i] + b) * x[i] + c) * x[i]
-    yi[range] = ((a[idx] * xi + b[idx]) * xi + c[idx]) * xi + d[idx]
-  }
-  yi
+  yi[range] <- switch(method,
+    "linear" = {
+        idx <- lookup(x[2:(nx-1)], xi) + 1
+                    # 2:(n-1) so that anything beyond the ends
+                    # gets dumped into an interval
+        ## use the endpoints of the interval to define a line
+        dy <- diff(y)
+        dx <- diff(x)
+        s <- (xi - x[idx]) / dx[idx]
+        s * dy[idx] + y[idx]
+        #yi = approx(x, y, xi, ties = "ordered", ...)$y
+    },
+    "nearest" = {
+        approx(c(x[1], x + c(diff(x)/2,0)), c(y[1], y), xi, method = "constant", f=1)$y
+    }, 
+    "spline" = {
+        splinefun(x, y, ...)(xi)
+    },
+    "pchip" = {
+        pchip(x, y, xi) 
+    },
+    "cubic" = {
+        if (nx < 4 || ny < 4)
+            stop("interp1: table too short")
+        idx = lookup(x[3:(nx-2)], xi) + 1
+    
+        ## Construct cubic equations for each interval using divided
+        ## differences (computation of c and d don't use divided differences
+        ## but instead solve 2 equations for 2 unknowns). Perhaps
+        ## reformulating this as a lagrange polynomial would be more efficient.
+    
+        i <- 1:(nx-3)
+        dx <- diff(x)
+        dx2 <- x[i+1]^2 - x[i]^2
+        dx3 <- x[i+1]^3 - x[i]^3
+        a <- diff(y, diff=3) / dx[i]^3 / 6
+        b <- (diff(y[1:(nx-1)], diff=2) / dx[i]^2 - 6*a*x[i+1]) / 2
+        c <- (diff(y[1:(nx-2)]) - a*dx3 - b*dx2) / dx[i]
+        d <- y[i] - ((a*x[i] + b) * x[i] + c) * x[i]
+        ((a[idx] * xi + b[idx]) * xi + c[idx]) * xi + d[idx]
+    })
+  return(yi)
 }
 
 #!demo
@@ -298,9 +305,9 @@ interp1 <- function(x, y, xi, method = c('linear', 'nearest', 'pchip', 'cubic', 
 #!assert (isempty(interp1(xp',yp',[],style)))
 #!assert (isempty(interp1(xp,yp,[],style)))
 #!assert (interp1(xp,[yp',yp'],xi(:),style),...
-#!	  [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
+#!    [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
 #!assert (interp1(xp,[yp',yp'],xi,style),
-#!	  interp1(xp,[yp',yp'],xi,['*',style]))
+#!    interp1(xp,[yp',yp'],xi,['*',style]))
 
 #!test style = 'linear'
 #!assert (interp1(xp, yp, [-1, max(xp)+1]), [NaN, NaN])
@@ -311,9 +318,9 @@ interp1 <- function(x, y, xi, method = c('linear', 'nearest', 'pchip', 'cubic', 
 #!assert (isempty(interp1(xp',yp',[],style)))
 #!assert (isempty(interp1(xp,yp,[],style)))
 #!assert (interp1(xp,[yp',yp'],xi(:),style),...
-#!	  [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
+#!    [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
 #!assert (interp1(xp,[yp',yp'],xi,style),
-#!	  interp1(xp,[yp',yp'],xi,['*',style]),100*eps)
+#!    interp1(xp,[yp',yp'],xi,['*',style]),100*eps)
 
 #!test style = 'cubic'
 #!assert (interp1(xp, yp, [-1, max(xp)+1]), [NaN, NaN])
@@ -324,9 +331,9 @@ interp1 <- function(x, y, xi, method = c('linear', 'nearest', 'pchip', 'cubic', 
 #!assert (isempty(interp1(xp',yp',[],style)))
 #!assert (isempty(interp1(xp,yp,[],style)))
 #!assert (interp1(xp,[yp',yp'],xi(:),style),...
-#!	  [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
+#!    [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
 #!assert (interp1(xp,[yp',yp'],xi,style),
-#!	  interp1(xp,[yp',yp'],xi,['*',style]),1000*eps)
+#!    interp1(xp,[yp',yp'],xi,['*',style]),1000*eps)
 
 #!test style = 'spline'
 #!assert (interp1(xp, yp, [-1, max(xp) + 1]), [NaN, NaN])
@@ -337,9 +344,9 @@ interp1 <- function(x, y, xi, method = c('linear', 'nearest', 'pchip', 'cubic', 
 #!assert (isempty(interp1(xp',yp',[],style)))
 #!assert (isempty(interp1(xp,yp,[],style)))
 #!assert (interp1(xp,[yp',yp'],xi(:),style),...
-#!	  [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
+#!    [interp1(xp,yp,xi(:),style),interp1(xp,yp,xi(:),style)])
 #!assert (interp1(xp,[yp',yp'],xi,style),
-#!	  interp1(xp,[yp',yp'],xi,['*',style]),10*eps)
+#!    interp1(xp,[yp',yp'],xi,['*',style]),10*eps)
 
 #!# test linear extrapolation
 #!assert (interp1([1:5],[3:2:11],[0,6],'linear','extrap'), [1, 13], eps)

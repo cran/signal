@@ -1,8 +1,8 @@
 \name{sgolay}
 \alias{sgolay}
-\title{ Savitzsky-Golay smoothing filters }
+\title{ Savitzky-Golay smoothing filters }
 \description{
-Computes the filter coefficients for all Savitzsky-Golay smoothing
+Computes the filter coefficients for all Savitzky-Golay smoothing
 filters.
 }
 \usage{

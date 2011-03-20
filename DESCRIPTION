@@ -1,7 +1,7 @@
 Package: signal
 Title: Signal processing
-Version: 0.6-1
-Date: 2010-02-26
+Version: 0.6-2
+Date: 2011-03-20
 Author: Tom Short <tshort@eprisolutions.com>
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 Depends: R (>= 2.10.0), stats, graphics, grDevices, MASS
@@ -11,6 +11,6 @@ Description: A set of generally Matlab/Octave-compatible signal
         filter models. It also includes interpolation functions and
         some Matlab comparability functions.
 License: GPL-2
-Packaged: 2010-03-02 15:23:48 UTC; ligges
+Packaged: 2011-03-20 18:36:43 UTC; ligges
 Repository: CRAN
-Date/Publication: 2010-03-02 16:58:42
+Date/Publication: 2011-03-22 16:08:02

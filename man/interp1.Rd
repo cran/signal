@@ -9,7 +9,7 @@ interp1(x, y, xi, method = c("linear", "nearest", "pchip", "cubic", "spline"), e
 }
 \arguments{
   \item{x,y}{ vectors giving the coordinates of the points to be
-          interpolated. }
+          interpolated. \code{x} is assumed to be strictly monotonic.}
   \item{xi}{ points at which to interpolate. }
   \item{method}{ one of "linear", "nearest", "pchip", "cubic", "spline". }
   \item{extrap}{ if \code{TRUE} or \code{'extrap'}, then extrapolate values beyond

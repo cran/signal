@@ -118,13 +118,29 @@ Ma <- function(b) {
   b
 }
 
+
 polyval <- function(coef, z) {
-#           n             n-1
-#  coef[1]*z   + coef[2]*z   + ... + coef[n]
-  n = length(coef)
-  nz = length(z)
-  as.vector(matrix(z, nz, n) ^ t(matrix((n-1):0, n, nz)) %*% coef)
+    lz <- length(z)
+    if(!lz) return(numeric(0))
+    n <- length(coef)
+    if(!n){
+        z[] <- 0
+        return(z)
+    }
+    if(!(mode(coef) == "numeric") && !(mode(coef) == "complex"))
+        stop("Argument 'coef' must be a real or complex vector.")
+
+    ## Vectorized
+    d_z <- dim(z)
+    dim(z) <- lz
+    y <- outer(z, (n-1):0, "^") %*% coef
+    dim(y) <- d_z
+    return(y)
 }
+
+
+
+
 
 conv <- function(x, y) {
   n <- length(x) + length(y) - 1
@@ -154,7 +170,3 @@ linspace <- function(from, to, n = 500)
 
 logseq <- function(from, to, n = 500)
   exp(seq(log(abs(from)), log(abs(to)), length = n))
-
-roots <- function(x) {
-  polyroot(rev(x))
-}

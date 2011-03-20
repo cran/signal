@@ -75,7 +75,7 @@ bilinear.Zpg <- function(Sz, T, ...)
   bilinear(Sz$zero, Sz$pole, Sz$gain, T)
 
 bilinear.Arma <- function(Sz, T, ...)  
-  as.Arma(bilinear(as.Zpg(Sz, T)))
+  as.Arma(bilinear(as.Zpg(Sz), T))
 
 bilinear.default <- function(Sz, Sp, Sg, T, ...)  { 
   p <- length(Sp)
