@@ -28,7 +28,7 @@
 
 fractdiff  <- function(x, d)  {
 
-  N = 100
+  N <- 100
 
   if (length(x) < 2)
     stop("fractdiff: x must be a vector")
@@ -38,19 +38,22 @@ fractdiff  <- function(x, d)  {
 
   if (d >= 1)
     for (k in 1:d)
-      x = x[2:length(x)] - x[1:(length(x) - 1)]
+      x <- x[-1] - x[-length(x)]
 
   if (d > -1) {
 
-    d = d %% 1
+    ## Matlab rem returns negative output for negative input...
+    sn <- d < 0
+    d <- d %% 1
+    if(sn) d <- d - 1 
 
     if (d != 0) {
-      n = 0:N
-      w = Re(gamma(-d+n) / gamma(-d) / gamma(n+1))
-      retval = fftfilt(w, x)
-      retval = retval[1:length(x)]
+      n <- 0:N
+      w <- Re(gamma(-d+n) / gamma(-d) / gamma(n+1))
+      retval <- fftfilt(w, x)
+      retval <- retval[seq_along(x)]
     } else {
-      retval = x
+      retval <- x
     }
 
   } else {

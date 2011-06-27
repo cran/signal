@@ -5,7 +5,8 @@
   FIR filter coefficients for a filter with the given order and frequency cutoff.
 }
 \usage{
-fir1(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"), window = hamming(n + 1), scale = TRUE)
+fir1(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"), 
+     window = hamming(n + 1), scale = TRUE)
 }
 \arguments{
   \item{n}{ order of the filter (1 less than the length of the filter) }

@@ -53,27 +53,29 @@ sgolay <- function(p, n, m = 0, ts = 1)  {
   ## noncausal, one filter per row.  For the bulk of your data you
   ## will use the central filter, but towards the ends you will need
   ## a filter that doesn't go beyond the end points.
-  F = matrix(0., n, n)
-  k = floor(n/2)
+  Fm <- matrix(0., n, n)
+  k <- floor(n/2)
   for (row  in  1:(k+1)) {
     ## Construct a matrix of weights Cij = xi ^ j.  The points xi are
     ## equally spaced on the unit grid, with past points using negative
     ## values and future points using positive values.
-    C = ( ((1:n)-row) %*% matrix(1, 1, p+1) ) ^ ( matrix(1, n) %*% (0:p) )
+    Ce <- ( ((1:n)-row) %*% matrix(1, 1, p+1) ) ^ ( matrix(1, n) %*% (0:p) )
     ## A = pseudo-inverse (C), so C*A = I; this is constructed from the SVD 
-    A = ginv(C)
+    A <- ginv(Ce, tol = .Machine$double.eps)
     ## Take the row of the matrix corresponding to the derivative
     ## you want to compute.
-    F[row,] = A[1+m,]
+    Fm[row,] <- A[1+m,]
   } 
   ## The filters shifted to the right are symmetric with those to the left.
-  F[(k+2):n,] = (-1)^m * F[k:1,n:1]
+  Fm[(k+2):n,] <- (-1)^m * Fm[k:1,n:1]
   if (m > 0)
-    F = F * prod(1:m) / (ts^m)
-  class(F) = "sgolayFilter"
-#  attr(F, "filterAttributes") <- list(n = n, p = p, m = m, ts = ts)
-  F
+    Fm <- Fm * prod(1:m) / (ts^m)
+  class(Fm) <- "sgolayFilter"
+#  attr(Fm, "filterAttributes") <- list(n = n, p = p, m = m, ts = ts)
+  Fm
 }
+
+
 
 
 #!test

@@ -22,22 +22,26 @@
 
 \method{grpdelay}{Zpg}(filt, \ldots)
 
-\method{plot}{grpdelay}(x, \ldots)
+\method{plot}{grpdelay}(x, xlab = if(x$HzFlag) 'Hz' else 'radian/sample', 
+    ylab = 'Group delay (samples)', type = "l", \ldots)
 
 \method{print}{grpdelay}(x, \ldots)
 }
+
 \arguments{
   \item{filt}{ for the default case, the moving-average coefficients of
     an ARMA model or filter. Generically, \code{filt}
     specifies an arbitrary model or filter operation.}
   \item{a}{ the autoregressive (recursive) coefficients of an ARMA filter. }
   \item{n}{ number of points at which to evaluate the frequency response. }
-  \item{whole}{ \code{'half'} or \code{FALSE} (the default) to evaluate
+  \item{whole}{\code{FALSE} (the default) to evaluate
     around the upper half of the
-    unit circle or \code{'whole'} to evaluate around the entire unit circle. }
+    unit circle or \code{TRUE} to evaluate around the entire unit circle. }
   \item{Fs}{ sampling frequency in Hz. If not specified, the frequencies
     are in radians. }
   \item{x}{ object to be plotted. }
+  \item{xlab,ylab,type}{as in \code{\link[graphics]{plot}}, but with more 
+    sensible defaults.}
   \item{\ldots}{ for methods of \code{grpdelay}, arguments are passed to
     the default method. For \code{plot.grpdelay}, additional arguments
     are passed through to \code{plot}. }
@@ -57,12 +61,12 @@ inside loops and function calls, so explicit calls to \code{print} or
 }
 \value{
   A list of class \code{grpdelay} with items:
-  \item{gd }{the group delay, in units of samples.  It can be converted
+  \item{gd}{ the group delay, in units of samples.  It can be converted
     to seconds by multiplying by the sampling period (or dividing by
     the sampling rate \code{Fs}).}
-  \item{w }{frequencies at which the group delay was calculated.}
-  \item{ns }{number of points at which the group delay was calculated.}
-  \item{HzFlag }{\code{TRUE} for frequencies in Hz, \code{FALSE} for frequencies in radians.}
+  \item{w}{ frequencies at which the group delay was calculated.}
+  \item{ns}{ number of points at which the group delay was calculated.}
+  \item{HzFlag}{ \code{TRUE} for frequencies in Hz, \code{FALSE} for frequencies in radians.}
 }
 \references{
   
@@ -80,6 +84,8 @@ inside loops and function calls, so explicit calls to \code{print} or
 # Two Zeros and Two Poles
 b <- poly(c(1/0.9*exp(1i*pi*0.2), 0.9*exp(1i*pi*0.6)))
 a <- poly(c(0.9*exp(-1i*pi*0.6), 1/0.9*exp(-1i*pi*0.2)))
-grpdelay(b, a, 512, 'whole', 1)
+gpd <- grpdelay(b, a, 512, whole = TRUE, Fs = 1)
+print(gpd)
+plot(gpd)
 }
 \keyword{ math }

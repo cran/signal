@@ -74,7 +74,7 @@ fir2 <- function(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n+1
 
   ## make sure grid is big enough for the window
   if (2*grid_n < n+1)
-    grid_n = 2^nextpow2(n+1)
+    grid_n = 2^ceiling(log2(abs(n+1)))
 
   ## Apply ramps to discontinuities
   if (ramp_n > 0) {
@@ -95,22 +95,24 @@ fir2 <- function(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n+1
 
     ## preserve window shape even though f may have changed
     m = approx(basef, basem, f, ties="ordered")$y
-
-    # axis([-.1 1.1 -.1 1.1])
-    # plot(f,m,'-xb;ramped;',basef,basem,'-or;original;'); pause
   }
   
   ## interpolate between grid points
-  grid = approx(f,m,seq(0, 1, length = grid_n+1))$y
-  # hold on; plot(linspace(0,1,grid_n+1),grid,'-+g;grid;'); hold off; pause
+  grid = approx(f,m,seq(0, 1, length = grid_n+1), ties = "ordered")$y
 
   ## Transform frequency response into time response and
   ## center the response about n/2, truncating the excess
-  b = fft(c(grid, grid[seq(grid_n, 2, by = -1)]), inverse = TRUE)
-  b = b / length(b)
-  mid = (n+1)/2
-  b = Re(c(b[(2*grid_n-floor(mid)+1):(2*grid_n)], b[1:ceiling(mid)]))
-
+  if((n %% 2) == 0) {
+    b = fft(c(grid, grid[seq(grid_n, 2, by = -1)]), inverse = TRUE)
+    b = b / length(b)
+    mid = (n+1)/2
+    b = Re(c(b[(2*grid_n-floor(mid)+1):(2*grid_n)], b[1:ceiling(mid)]))
+  } else {
+    b = fft(c(grid, rep(0, grid_n*2), grid[seq(grid_n, 2, by = -1)]), inverse = TRUE)
+    b = b / length(b)
+    b = 2 * Re(c(b[seq(length(b)-n+1, length(b), by=2)], b[seq(2, n+2, by=2)]))
+  }
+  
   ## Multiplication in the time domain is convolution in frequency,
   ## so multiply by our window now to smooth the frequency response.
   b = b * window

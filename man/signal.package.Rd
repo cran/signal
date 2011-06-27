@@ -10,7 +10,7 @@ Signal processing
 A set of generally Matlab/Octave-compatible signal processing
 functions. Includes filter generation utilities, filtering functions,
 resampling routines, and visualization of filter models. It also
-includes interpolation functions and some Matlab compatability
+includes interpolation functions and some Matlab compatibility
 functions.
 }
 \details{
@@ -27,7 +27,7 @@ cheby1, cheby2, ellip, ellipord, sftrans
 
 \emph{Interpolation:} interp1, pchip
 
-\emph{Compatibility routines and utilities:} ifft, linspace, sinc,
+\emph{Compatibility routines and utilities:} ifft, sinc,
 postpad, chirp, poly, polyval
 
 \emph{Windowing:} bartlett, blackman, boxcar, flattopwin, gausswin,
@@ -52,7 +52,7 @@ main credit goes to the original Octave authors:
   Translations by Tom Short \email{tshort@eprisolutions.com} 
   (who maintained the package until 2009).
   
-  Current maintainer is Uwe Ligges \email{ligges@statistik.tu-dortmund.de} 
+  Current maintainer is Uwe Ligges \email{ligges@statistik.tu-dortmund.de}.
 }
 \references{
   \url{http://en.wikipedia.org/wiki/Category:Signal_processing}

@@ -119,7 +119,8 @@ ncauer <- function(Rp, Rs, n)  { #  [zer, pol, T0]
     q0 <- int[2]
     x <- n * ql0 / q0
 #    kl <- optim(ellip_ws_min, method = "L-BFGS-B", lower = eps, upper = 1-eps)
-    kl <- optimize(ellip_ws_min, interval = c(eps, 1-eps))$minimum
+    kl <- optimize(ellip_ws_min, 
+        interval = c(.Machine$double.eps, 1-.Machine$double.eps))$minimum
     ws <- sqrt(1/kl)
     ws
   }

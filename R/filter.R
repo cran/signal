@@ -49,6 +49,7 @@ filter.MedianFilter <- function(filt, x, ...) {
 }
 
 medfilt1 <- function(x, n = 3, ...) {
+  .Deprecated("runmed", package="signal", "'medfilt1' is deprecated. Use 'runmed' of the 'stats' package instead.")
   runmed(x, n, ...)
 }
 
@@ -57,9 +58,10 @@ spencerFilter <- function() {
 }
 
 spencer  <- function(x)  {
-  fftfilt(c(-3, -6, -5, 3, 21, 46, 67, 74, 67, 46, 21, 3, -5, -6, -3) / 320,
-          x)
-} 
+    retval <- fftfilt(c(-3, -6, -5, 3, 21, 46, 67, 74, 67, 46, 21, 3, -5, -6, -3) / 320, x)
+    retval <- c(rep(NA, 7), retval[-(1:14)], rep(NA, 7))
+    retval
+}
 
 FilterOfOrder <- function(n, Wc, type, ...) {
   res = list(n = n, Wc = Wc, type = type, ...)
@@ -71,8 +73,16 @@ an <- function(degrees) {
   exp(1i*degrees*pi/180)
 }
 
-roots <- function(x) {
-  polyroot(rev(x))
+roots <- function(x, method = c("polyroot", "eigen")) {
+    method <- match.arg(method)
+    if(method=="polyroot")
+        return(polyroot(rev(x)))
+    if(!is.numeric(x))
+        stop("x must be numeric")
+    success <- library("pracma", pos = "package:base", logical.return = TRUE, warn.conflicts = FALSE)
+    if(!success)
+        stop("method 'eigen' is only available if package 'pracma' is installed")
+    rev(pracma::roots(as.numeric(x)))
 }
 
 Arma <- function(b, a) {
@@ -161,12 +171,7 @@ postpad <- function(x, n) {
 ifft <- function(x)
   fft(x, inverse = TRUE) / length(x)
 
-eps <- .Machine$double.eps
-
 sinc <- function(x) sin(pi*x)/(pi*x)
-
-linspace <- function(from, to, n = 500)
-  seq(from, to, length = n)
 
 logseq <- function(from, to, n = 500)
   exp(seq(log(abs(from)), log(abs(to)), length = n))

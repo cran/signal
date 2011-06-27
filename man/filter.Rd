@@ -11,17 +11,17 @@
   Matlab/Octave conventions.
 }
 \usage{
-\method{filter}{default}(filt, a, x, \ldots)
+\method{filter}{default}(filt, a, x, \dots)
 
-\method{filter}{Arma}(filt, x, \ldots)
+\method{filter}{Arma}(filt, x, \dots)
 
-\method{filter}{Ma}(filt, x, \ldots)
+\method{filter}{Ma}(filt, x, \dots)
 
-\method{filter}{Zpg}(filt, x, \ldots)
+\method{filter}{Zpg}(filt, x, \dots)
 }
 \arguments{
   \item{filt}{ For the default case, the moving-average coefficients of
-    an ARMA filter (normally called 'b'). Generically, \code{filt}
+    an ARMA filter (normally called \sQuote{b}). Generically, \code{filt}
     specifies an arbitrary filter operation.}
   \item{a}{ the autoregressive (recursive) coefficients of an ARMA filter. }
   \item{x}{ the input signal to be filtered. }
@@ -33,7 +33,7 @@ The default filter is an ARMA filter defined as:
 
 \deqn{a_1y_n + a_2y_{n-1} + \dots + a_ny_1 = b_1x_n +
   b_2x_{m-1} + \dots + b_mx_1}{
-  a[1]*y[n] + a[2]*y[n-1] + ... + a[n]*y[1] = b[1]*x[n] + b[2]*x[m-1] + ... + b[m]*x[1]}
+  a[1]*y[n] + a[2]*y[n-1] + \dots + a[n]*y[1] = b[1]*x[n] + b[2]*x[m-1] + \dots + b[m]*x[1]}
 
 The default filter calls \code{stats:::filter}, so it returns a
 time-series object. 

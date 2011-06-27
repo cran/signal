@@ -60,10 +60,15 @@
 ## * remove "See also spectrogram"
 ## * add notes on selecting parameters for the spectrogram
 
-specgram <- function(x, n = min(256, length(x)), Fs = 2, window = hanning(n), overlap = length(window)/2)  { 
+specgram <- function(x, n = min(256, length(x)), Fs = 2, window = hanning(n),
+     overlap = ceiling(length(window)/2)){ 
   ## if only the window length is given, generate hanning window
+
+  if(!is.numeric(x))
+    stop("'x' has to be a numeric.")
+      
   if (length(window) == 1)
-    window = hanning(window)
+    window <- hanning(window)
 
   ## should be extended to accept a vector of frequencies at which to
   ## evaluate the fourier transform (via filterbank or chirp
@@ -72,43 +77,43 @@ specgram <- function(x, n = min(256, length(x)), Fs = 2, window = hanning(n), ov
     stop("specgram does not handle frequency vectors yet")
 
   ## compute window offsets
-  win_size = length(window)
+  win_size <- length(window)
   if (win_size > n) {
-    n = win_size
+    n <- win_size
     warning("specgram fft size adjusted to", n)
   } 
-  step = win_size - overlap
+  step <- win_size - overlap
 
   ## build matrix of windowed data slices
   if (length(x) > win_size)
-    offset = seq(1, length(x)-win_size, by = step)
+    offset <- seq(1, length(x)-win_size, by = step)
   else
-    offset = 1    
-  S = matrix(0, n, length(offset))
-  for ( i in 1 : length(offset)) {
-    S[1:win_size, i] = x[offset[i]:(offset[i] + win_size - 1)] * window
+    offset <- 1    
+  S <- matrix(0, n, length(offset))
+  for (i in seq_along(offset)) {
+    S[1:win_size, i] <- x[offset[i]:(offset[i] + win_size - 1)] * window
   }
 
   ## compute fourier transform
-  S = mvfft(S)
+  S <- mvfft(S)
 
   ## extract the positive frequency components
   if (n %% 2 == 1)
-    ret_n = (n+1)/2
+    ret_n <- (n+1)/2
   else
-    ret_n = n/2
-  S = S[1:ret_n, ]
+    ret_n <- n/2
+  S <- S[1:ret_n, ]
   
-  f = (0:(ret_n-1))*Fs/n
-  t = offset/Fs
+  f <- (0:(ret_n-1))*Fs/n
+  t <- offset/Fs
   
-  res = list(S = S, f = f, t = t)
-  class(res) = "specgram"
+  res <- list(S = S, f = f, t = t)
+  class(res) <- "specgram"
   res
 }
 
-print.specgram <- plot.specgram <- function(x, ...) {
-  image(20*log10(t(abs(x$S))), col = gray(0:512 / 512), axes = FALSE, ...)
+print.specgram <- plot.specgram <- function(x, col = gray(0:512 / 512), xlab="time", ylab="frequency", ...) {
+  image(x$t, x$f, 20 * log10(t(abs(x$S))), col = col, xlab = xlab, ylab = ylab, ...)
 }
 
 

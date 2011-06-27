@@ -98,7 +98,7 @@ pchip  <- function(x, y, xi = NULL)  {
   ret
 } 
   
-#xf = linspace(0,10); yf = sin(2*pi*xf/5)
+#xf = seq(0,10, length=500); yf = sin(2*pi*xf/5)
 #xp = 0:10; yp = sin(2*pi*xp/5)
 #xp = c(0:1,3:10); yp = sin(2*pi*xp/5)
 #lin  = pchip(xp, yp, xf)
@@ -152,7 +152,7 @@ mkpp <- function(x, P, d = round(NROW(P)/pp$n)) {
 } 
   
 ##%!demo # linear interpolation
-#x = linspace(0,pi,5) 
+#x = seq(0,pi,length=5) 
 #t= cbind(sin(x), cos(x))
 #m = diff(t) / (x[2]-x[1])
 #b = t[1:4,]

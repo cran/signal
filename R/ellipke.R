@@ -40,7 +40,7 @@
 ##   * extended for m < 0
 
 
-ellipke <- function(m) {
+ellipke <- function(m, Nmax=16) {
 
   k <- e <- array(0, dim(m))
   if (!any(is.real(m)))
@@ -48,7 +48,6 @@ ellipke <- function(m) {
   if (any(m > 1))
     stop("ellipke must have m <= 1")
 
-  Nmax <- 16
   idx <- which(m == 1)
   if (length(idx) > 0) {
     k[idx] <- Inf
@@ -81,9 +80,10 @@ ellipke <- function(m) {
       a <- t
       f <- f * 2
       sum <- sum + f * c^2
-      if (all(c/a < eps)) break
+      if (all(c/a < .Machine$double.eps)) break
     } 
-    if (n >= Nmax) stop("ellipke: not enough workspace")
+    if (n >= Nmax && all(c/a >= .Machine$double.eps)) 
+        stop("ellipke: did not converge after Nmax iterations")
     k[idx] <- 0.5*pi / a
     e[idx] <- 0.5*pi * (1.0 - sum) / a
     k[idx_neg] <- mult_k * k[idx_neg]

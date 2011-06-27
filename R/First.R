@@ -1,3 +1,3 @@
-.First.lib <- function(libname, pkgname) {
-  library.dynam("signal")
-}
+#.First.lib <- function(libname, pkgname) {
+#  library.dynam("signal")
+#}

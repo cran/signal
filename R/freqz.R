@@ -82,36 +82,32 @@ print.freqz <- plot.freqz <- function(x, ...)
   freqz_plot(x$f, x$h)
 
 freqz.default <- function(filt = 1, a = 1, n = 512, region = NULL, Fs = 2*pi, ...)  {
-  b = filt
+  b <- filt
   if (is.null(region))
-    if (is.real(b) && is.real(a))
-      region = "half"
-    else
-      region = "whole"
-
+    region <- if (is.real(b) && is.real(a)) "half" else "whole"
   if (length(n) > 1) { ## Explicit frequency vector given
-    f = n
-    w = 2*pi*f/Fs
-    hb = polyval(rev(b), exp(-1i*w))
-    ha = polyval(rev(a), exp(-1i*w))
+    f <- n
+    w <- 2*pi*f/Fs
+    hb <- polyval(rev(b), exp(-1i*w))
+    ha <- polyval(rev(a), exp(-1i*w))
   } else if (region == "whole") {
-    f = Fs * (0:(n-1)) / n
+    f <- Fs * (0:(n-1)) / n
     ## polyval(fliplr(P),exp(-jw)) is O(p n) and fft(x) is O(n log(n)), where p is the 
     ## order of the the polynomial P.  For small p it would be faster to use polyval  
     ## but in practice the overhead for polyval is much higher and the little bit of
     ## time saved isn't worth the extra code.
-    hb = fft(postpad(b, n))
-    ha = fft(postpad(a, n))
+    hb <- fft(postpad(b, n))
+    ha <- fft(postpad(a, n))
   } else { # region == "half"
-    f = Fs/2 * (0:(n-1)) / n
-    hb = fft(postpad(b, 2*n))[1:n]
-    ha = fft(postpad(a, 2*n))[1:n]
+    f <- Fs/2 * (0:(n-1)) / n
+    hb <- fft(postpad(b, 2*n))[1:n]
+    ha <- fft(postpad(a, 2*n))[1:n]
   }
 
-  h = hb / ha
+  h <- hb / ha
 
-  res = list(h = h, f = f)
-  class(res) = "freqz"
+  res <- list(h = h, f = f)
+  class(res) <- "freqz"
   res
 } 
 

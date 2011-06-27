@@ -8,7 +8,7 @@
 \alias{freqz_plot.freqz}
 \alias{plot.freqz}
 \alias{print.freqz}
-\title{ s-plane frequency response }
+\title{ z-plane frequency response }
 \description{
 Compute the z-plane frequency response of an ARMA model or IIR filter.
 
@@ -62,8 +62,8 @@ needed there.
 }
 \value{
   For \code{freqz} list of class \code{freqz} with items:
-  \item{h}{array of frequencies. }
-  \item{f}{complex array of frequency responses at those frequencies.}
+  \item{h}{ array of frequencies. }
+  \item{f}{ complex array of frequency responses at those frequencies.}
 
 }
 \references{ 

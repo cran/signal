@@ -11,18 +11,18 @@
 \usage{
 Arma(b, a)
 
-\method{as.Arma}{Zpg}(x, ...)
+\method{as.Arma}{Zpg}(x, \dots)
 
-\method{as.Arma}{Arma}(x, ...)
+\method{as.Arma}{Arma}(x, \dots)
 
-\method{as.Arma}{Ma}(x, ...)
+\method{as.Arma}{Ma}(x, \dots)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{b}{ moving average (MA) polynomial coefficients. }
   \item{a}{ autoregressive (AR) polynomial coefficients. }
   \item{x}{ model or filter to be converted to an ARMA representation. }
-  \item{\ldots}{ additional arguments (ignored). }
+  \item{\dots}{ additional arguments (ignored). }
 }
 \details{
 The ARMA model is defined by:

@@ -20,7 +20,7 @@
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{filt}{ For the default case, the moving-average coefficients of
-    an ARMA filter (normally called 'b'). Generically, \code{filt}
+    an ARMA filter (normally called \sQuote{b}). Generically, \code{filt}
     specifies an arbitrary filter operation.}
   \item{a}{ the autoregressive (recursive) coefficients of an ARMA filter. }
   \item{x}{ the input signal to be filtered. }
@@ -37,7 +37,7 @@
  filter time to ramp up to the level at the end of the signal.
  Unfortunately, the degree of padding required is dependent on the
  nature of the filter and not just its order, so this function needs
- some work yet.
+ some work yet - and is in the state of the year 2000 version of the Octave code.
 
  Since \code{filtfilt} is generic, it can be extended to call other filter types.
 }

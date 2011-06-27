@@ -4,7 +4,7 @@
 \alias{ellip.FilterOfOrder}
 \title{ Elliptic or Cauer filter }
 \description{
-  Generate an Elliptic or Cauer filter (discrete and contnuious).
+  Generate an Elliptic or Cauer filter (discrete and continuous).
 }
 \usage{
 \method{ellip}{default}(n, Rp, Rs, W, type = c("low", "high", "stop",
@@ -39,7 +39,7 @@
   \item{b}{ moving average (MA) polynomial coefficients }
   \item{a}{ autoregressive (AR) polynomial coefficients }
 }
-\references{ Oppenheim, Alan V., Discrete Time Signal Processing,
+\references{ Oppenheim, Alan V., \emph{Discrete Time Signal Processing},
   Hardcover, 1999.
   
 Parente Ribeiro, E., Notas de aula da disciplina TE498 -  Processamento 
@@ -51,7 +51,7 @@ Octave Forge \url{http://octave.sf.net}
 
 }
 \author{ Original Octave version by Paulo Neis
-  \email{p\_neis@yahoo.com.br}.
+  \email{p_neis@yahoo.com.br}.
   Modified by Doug Stewart. Conversion to R by Tom Short. }
 \seealso{ \code{\link{Arma}}, \code{\link{filter}}, \code{\link{butter}},
   \code{\link{cheby1}}, and \code{\link{ellipord}}}

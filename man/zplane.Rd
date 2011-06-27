@@ -26,7 +26,7 @@ Plot the poles and zeros of a model or filter.
   \item{\dots}{ Additional arguments passed to \code{plot}. }
 }
 \details{
-  Poles are marked with an `x', and zeros are marked with an `o'.
+  Poles are marked with an \sQuote{x}, and zeros are marked with an \sQuote{o}.
 }
 \value{
   No value is returned.

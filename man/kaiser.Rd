@@ -17,7 +17,7 @@ kaiser(n, beta)
   An array of filter coefficients of \code{length(n)}.
 }
 \references{
-  Oppenheim, A. V.; Schafer, R. W.; and Buck J. R. (1999). Discrete-time signal processing. Upper Saddle River, N.J.: Prentice Hall.
+  Oppenheim, A. V., Schafer, R. W., and Buck, J. R. (1999). \emph{Discrete-time signal processing}. Upper Saddle River, N.J.: Prentice Hall.
 
   \url{http://en.wikipedia.org/wiki/Kaiser_window}
 
@@ -30,4 +30,4 @@ plot(kaiser(101, 2), type = "l", ylim = c(0,1))
 lines(kaiser(101, 10), col = "blue")
 lines(kaiser(101, 50), col = "green")
 }
-\keyword{ math  }
+\keyword{ math }

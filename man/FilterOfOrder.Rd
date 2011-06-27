@@ -6,12 +6,12 @@
   others.
 }
 \usage{
-FilterOfOrder(n, Wc, type, ...)
+FilterOfOrder(n, Wc, type, \dots)
 }
 \arguments{
   \item{n}{ filter order }
   \item{Wc}{ cutoff frequency }
-  \item{type}{ filter type, normally one of "low", "high", "stop", or "pass" }
+  \item{type}{ filter type, normally one of \code{"low"}, \code{"high"}, \code{"stop"}, or \code{"pass"} }
   \item{\dots}{ other filter description characteristics, possibly
     including \code{Rp} for dB of pass band ripple or \code{Rs} for dB
     of stop band ripple, depending on filter type (Chebyshev, etc.). }
@@ -24,7 +24,7 @@ FilterOfOrder(n, Wc, type, ...)
   (repeats of the input arguments):
   \item{n}{ filter order }
   \item{Wc}{ cutoff frequency }
-  \item{type}{ filter type, normally one of "low", "high", "stop", or "pass" }
+  \item{type}{ filter type, normally one of \code{"low"}, \code{"high"}, \code{"stop"}, or \code{"pass"} }
   \item{\dots}{ other filter description characteristics, possibly
     including \code{Rp} for dB of pass band ripple or \code{Rs} for dB
     of stop band ripple, depending on filter type (Chebyshev, etc.). }

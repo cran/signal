@@ -88,8 +88,8 @@ fftfilt  <- function(b, x, n = NULL) {
  
   if (is.numeric(b) && is.numeric(x)) 
     y = Re(y)
-  if (!any(b - round(b))) {
-    idx = !any(x - round(x))
+  if (!any(as.logical(b - round(b)))) {
+    idx = !any(as.logical(x - round(x)))
     y[idx] = round(y[idx])
   } 
   y

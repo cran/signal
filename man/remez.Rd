@@ -15,7 +15,7 @@ remez(n, f, a, w = rep(1.0, length(f) / 2),
     being the Nyquist frequency.}
   \item{a}{ amplitude at the band edges. }
   \item{w}{ weighting applied to each band. }
-  \item{ftype}{ options are: 'bandpass', 'differentiator', and 'hilbert'. }
+  \item{ftype}{ options are: \code{'bandpass'}, \code{'differentiator'}, and \code{'hilbert'}. }
   \item{density}{ determines how accurately the filter will be
      constructed. The minimum value is 16, but higher numbers are
      slower to compute.}

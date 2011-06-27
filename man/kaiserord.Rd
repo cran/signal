@@ -28,13 +28,13 @@ kaiserord(f, m, dev, Fs = 2)
   An object of class \code{FilterOfOrder} with the following list elements:
   \item{n}{ filter order }
   \item{Wc}{ cutoff frequency }
-  \item{type}{ filter type, one of "low", "high", "stop", "pass",
-    "DC-0", or "DC-1" }
+  \item{type}{ filter type, one of \code{"low"}, \code{"high"}, \code{"stop"}, \code{"pass"},
+    \code{"DC-0"}, or \code{"DC-1"} }
   \item{beta}{ shape parameter }
 }
 \references{
-  Oppenheim, A. V.; Schafer, R. W.; and Buck J. R. (1999). 
-    Discrete-time signal processing. Upper Saddle River, N.J.: Prentice Hall.
+  Oppenheim, A. V., Schafer, R. W., and Buck, J. R. (1999). 
+    \emph{Discrete-time signal processing}. Upper Saddle River, N.J.: Prentice Hall.
 
   \url{http://en.wikipedia.org/wiki/Kaiser_window}
 

@@ -5,27 +5,29 @@
 Generate a chirp signal.  A chirp signal is a frequency swept cosine wave.
 }
 \usage{
-chirp(t, f0 = 0, t1 = 1, f1 = 100, form = c("linear", "quadratic", "logarithmic"), phase = 0)
+chirp(t, f0 = 0, t1 = 1, f1 = 100, 
+      form = c("linear", "quadratic", "logarithmic"), phase = 0)
 }
 \arguments{
   \item{t}{ array of times at which to evaluate the chirp signal. }
   \item{f0}{ frequency at time t=0. }
   \item{t1}{ time, s. }
   \item{f1}{ frequency at time t=t1. }
-  \item{form}{ shape of frequency sweep, one of "linear", "quadratic",
-    or "logarithmic". }
+  \item{form}{ shape of frequency sweep, one of \code{"linear"}, \code{"quadratic"},
+    or \code{"logarithmic"}. }
   \item{phase}{ phase shift at t=0. }
 }
 \details{
-  'linear' is:
+
+  \code{'linear'} is:
   
   \deqn{f(t) = (f1-f0)*(t/t1) + f0}
   
-  'quadratic' is:
+  \code{'quadratic'} is:
 
-  \deqn{f(t) = (f1-f0)*{t/t1}^2 + f0}
+  \deqn{f(t) = (f1-f0)*(t/t1)^2 + f0}
   
-  'logarithmic' is:
+  \code{'logarithmic'} is:
 
   \deqn{f(t) = (f1-f0)^{t/t1} + f0}
 }

@@ -16,13 +16,16 @@ resample(x, p, q = 1, d = 5)
 Note that \code{p} and \code{q} do
 not need to be integers since this routine does not use a polyphase
 rate change algorithm, but instead uses bandlimited interpolation,
-wherein the continous time signal is estimated by summing the sinc
+wherein the continuous time signal is estimated by summing the sinc
 functions of the nearest neighbouring points up to distance \code{d}.
 
-Note that resample computes all samples up to but not including time
-n+1. If you are increasing the sample rate, this means that it will
+Note that resample computes all samples up to but not including time n+1. 
+If you are increasing the sample rate, this means that it will
 generate samples beyond the end of the time range of the original
-signal. That is why xf must goes all the way to 10.95 in the example below.
+signal. That is why \code{xf} must go all the way to 10.95 in the example below.
+
+Nowadays, the signal version in Matlab and Octave contain more modern code for 
+resample that has not been ported to the signal R package (yet).
 }
 \value{
   The resampled signal, an array of length \code{ceiling(length(x) * p / q)}.

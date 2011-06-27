@@ -52,8 +52,8 @@ needed there.
 }
 \value{
   For \code{freqs} list of class \code{freqs} with items:
-  \item{H }{array of frequencies. }
-  \item{W }{complex array of frequency responses at those frequencies.}
+  \item{H}{ array of frequencies. }
+  \item{W}{ complex array of frequency responses at those frequencies.}
 
 }
 \author{ Original Octave version by Julius O. Smith III. Conversion to R by Tom Short. }
@@ -62,7 +62,7 @@ needed there.
 \examples{
 b <- c(1, 2)
 a <- c(1, 1)
-w <- linspace(0, 4, 128)
+w <- seq(0, 4, length=128)
 freqs(b, a, w)
 }
 \keyword{ math }

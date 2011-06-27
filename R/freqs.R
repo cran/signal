@@ -22,9 +22,9 @@
 # argument, a plot of magnitude and phase are displayed.
 #
 # Example:
-#	B = [1 2]; A = [1 1]
-#	w = linspace(0,4,128)
-#	freqs(B,A,w)
+#   B = [1 2]; A = [1 1]
+#   w = linspace(0,4,128)
+#   freqs(B,A,w)
 
 # 2003-05-16 Julius Smith - created
 
@@ -66,5 +66,5 @@ freqs_plot.default <- function(w, h, ...) {
 #!demo
 ##B = c(1, 2)
 ##A = c(1, 1)
-##w = linspace(0,4,128)
+##w = seq(0,4,length=128)
 ##freqs(B,A,w)

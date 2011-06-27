@@ -48,7 +48,7 @@
   For \code{cheby1}, the ARMA model specifies a type-I Chebyshev filter,
   and for \code{cheby2}, a type-II Chebyshev filter.
 }
-\references{ Parks & Burrus (1987). Digital Filter Design. New York: John Wiley & Sons, Inc.
+\references{ Parks & Burrus (1987). \emph{Digital Filter Design}. New York: John Wiley & Sons, Inc.
 
   \url{http://en.wikipedia.org/wiki/Chebyshev_filter}
   

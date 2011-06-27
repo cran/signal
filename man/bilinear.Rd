@@ -10,11 +10,11 @@
 specification.
 }
 \usage{
-\method{bilinear}{default}(Sz, Sp, Sg, T, ...)
+\method{bilinear}{default}(Sz, Sp, Sg, T, \dots)
 
-\method{bilinear}{Zpg}(Sz, T, ...)
+\method{bilinear}{Zpg}(Sz, T, \dots)
 
-\method{bilinear}{Arma}(Sz, T, ...)
+\method{bilinear}{Arma}(Sz, T, \dots)
 }
 \arguments{
   \item{Sz}{ In the generic case, a model to be transformed. In the
@@ -35,9 +35,9 @@ at w after the bilinear transform is complete.
 
 The bilinear transform is:
 
-\deqn{ z = \frac{1 + sT/2}{1 - sT/2}{ z = (1 + sT/2) / (1 - sT/2)}}
+\deqn{z = \frac{1 + sT/2}{1 - sT/2}}{z = (1 + sT/2) / (1 - sT/2)}
 
-\deqn{ s = \frac{T}{2}\frac{z - 1}{z + 1}}{s = (T/2) * (z - 1) / (z + 1)}
+\deqn{s = \frac{T}{2}\frac{z - 1}{z + 1}}{s = (T/2) * (z - 1) / (z + 1)}
 
 Please note that a pole and a zero at the same place exactly cancel.
 This is significant since the bilinear transform creates numerous
@@ -49,8 +49,8 @@ filter). There may be other opportunistic cancellations, but it will
 not check for them.
 
 Also note that any pole on the unit circle or beyond will result in
-an unstable filter.  Because of cancellation, this will only happen
-if the number of poles is smaller than the number of zeros.  The
+an unstable filter. Because of cancellation, this will only happen
+if the number of poles is smaller than the number of zeros. The
 analytic design methods all yield more poles than zeros, so this will
 not be a problem.
 
@@ -58,15 +58,15 @@ not be a problem.
 \value{
   For the default case or for \code{bilinear.Zpg}, an object of class
   \dQuote{Zpg}, containing the list elements:
-  \item{zero }{complex vector of the zeros of the transformed model}
-  \item{pole }{complex vector of the poles of the transformed model}
-  \item{gain }{gain of the transformed model}
+  \item{zero}{ complex vector of the zeros of the transformed model }
+  \item{pole}{ complex vector of the poles of the transformed model }
+  \item{gain}{ gain of the transformed model }
   For \code{bilinear.Arma}, an object of class
   \dQuote{Arma}, containing the list elements:
   \item{b}{ moving average (MA) polynomial coefficients }
   \item{a}{ autoregressive (AR) polynomial coefficients }
 }
-\references{ Proakis & Manolakis (1992). Digital Signal Processing. New York:
+\references{ Proakis & Manolakis (1992). \emph{Digital Signal Processing}. New York:
   Macmillan Publishing Company.
 
   \url{http://en.wikipedia.org/wiki/Bilinear_transform}

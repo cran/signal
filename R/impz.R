@@ -36,9 +36,9 @@
 
 impz <- function(filt, ...) UseMethod("impz")
 
-print.impz <- plot.impz <- function(x, ...) {
-  plot(x$t, x$x, xlab = "Time, msec", ylab = "", type = "l")
-  title('Impulse response')
+print.impz <- plot.impz <- function(x, xlab = "Time, msec", ylab = "", type = "l",
+    main = "Impulse response", ...) {
+  plot(x$t, x$x, xlab = xlab, ylab = ylab, type = type, main = main, ...)
 }
 
 impz.Arma <- function(filt, ...) # IIR
@@ -59,8 +59,8 @@ impz.default <- function(filt, a = 1, n = NULL, Fs = 1, ...)  {
       n = floor(-6/log10(maxpole))
     else {                       # periodic -- cutoff after 5 cycles
       n = 30
-      # find longest period less than infinity
-      # cutoff after 5 cycles (w=10*pi)
+      ## find longest period less than infinity
+      ## cutoff after 5 cycles (w=10*pi)
       rperiodic = r[abs(r) >= 1 - precision & abs(Arg(r)) > 0]
       if (!is.null(rperiodic)) {
         n_periodic = ceiling(10*pi / min(abs(Arg(rperiodic))))
@@ -68,14 +68,14 @@ impz.default <- function(filt, a = 1, n = NULL, Fs = 1, ...)  {
           n = n_periodic
       } 
       
-      # find most damped pole
-      # cutoff at -60 dB
+      ## find most damped pole
+      ## cutoff at -60 dB
       rdamped = r[abs(r) < 1 - precision]
       if (!is.null(rdamped))
       n_damped = floor(-3/log10(max(abs(rdamped))))
       if (n_damped > n)
         n = n_damped
-	} 
+    } 
     n = n + length(b)
   } else if (is.null(n)) {
     n = length(b)

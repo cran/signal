@@ -22,7 +22,7 @@ fir2(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n + 1))
   \item{window}{ smoothing window. The returned filter is the same shape as the smoothing window. }
 }
 \value{
-  The FIR filter coefficients, an array of length(n+1), of class \code{Ma}.
+  The FIR filter coefficients, an array of \code{length(n+1)}, of class \code{Ma}.
 }
 \references{ 
 Octave Forge \url{http://octave.sf.net}

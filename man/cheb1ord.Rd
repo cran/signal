@@ -11,9 +11,9 @@ cheb1ord(Wp, Ws, Rp, Rs)
   \item{Wp, Ws}{ pass-band and stop-band edges. For a low-pass or
     high-pass filter, \code{Wp} and \code{Ws} are scalars. For a
     band-pass or band-rejection filter, both are vectors of length
-    2. For a low-pass filter, Wp < Ws. For a
-    high-pass filter, Ws > Wp. For a band-pass (Ws[1] < Wp[1] < Wp[2] <
-    Ws[2]) or band-reject (Wp[1] < Ws[1] < Ws[2] < Wp[2])
+    2. For a low-pass filter, \code{Wp < Ws}. For a
+    high-pass filter, \code{Ws > Wp}. For a band-pass (\code{Ws[1] < Wp[1] < Wp[2] <
+    Ws[2]}) or band-reject (\code{Wp[1] < Ws[1] < Ws[2] < Wp[2]})
     filter design, \code{Wp} gives the edges of the pass band, and \code{Ws} gives
     the edges of the stop band. Frequencies are normalized to [0,1],
     corresponding to the range [0, Fs/2]. }
@@ -25,7 +25,7 @@ cheb1ord(Wp, Ws, Rp, Rs)
   \item{n}{ filter order }
   \item{Wc}{ cutoff frequency }
   \item{Rp}{ allowable decibels of ripple in the pass band }
-  \item{type}{ filter type, one of "low", "high", "stop", or "pass" }
+  \item{type}{ filter type, one of \dQuote{low}, \dQuote{high}, \dQuote{stop}, or \dQuote{pass} }
   This object can be passed directly to \code{cheby1} to compute filter coefficients.
 }
 \references{ 

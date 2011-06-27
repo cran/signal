@@ -18,7 +18,7 @@ sgolay(p, n, m = 0, ts = 1)
   The early rows of the result \code{F} smooth based on future values and later rows
 smooth based on past values, with the middle row using half future
 and half past.  In particular, you can use row \code{i} to estimate \code{x[k]}
-based on the \code{i-1} preceding values and the n-i following values of x
+based on the \code{i-1} preceding values and the \code{n-i} following values of x
 values as \code{y[k] = F[i,] * x[(k-i+1):(k+n-i)]}.
 
 Normally, you would apply the first \code{(n-1)/2} rows to the first \code{k}
@@ -34,7 +34,7 @@ An square matrix with dimensions \code{length(n)} that is of
 class \code{'sgolayFilter'} (so it can be used with \code{filter}).}
 \references{
   William H. Press, Saul A. Teukolsky, William T. Vetterling, Brian
-  P. Flannery, Numerical Recipes in C: The Art of Scientific Computing ,
+  P. Flannery, \emph{Numerical Recipes in C: The Art of Scientific Computing} ,
   2nd edition, Cambridge Univ. Press, N.Y., 1992.
   
   Octave Forge \url{http://octave.sf.net}

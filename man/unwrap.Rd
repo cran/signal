@@ -22,7 +22,7 @@ unwrap(a, tol = pi, dim = 1)
 \author{ Original Octave version by Bill Lash. Conversion to R by Tom Short. }
 
 \examples{
-phase <- c(linspace(0,2*pi), linspace(0, 2*pi))
+phase <- c(seq(0, 2*pi, length=500), seq(0, 2*pi, length=500))
 plot(phase, type = "l", ylim = c(0, 4*pi))
 lines(unwrap(phase), col = "blue")
 }

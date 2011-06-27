@@ -30,15 +30,15 @@ In contrast to \code{spline}, \code{pchip} preserves the monotonicity of
   \item{P}{ a matrix with \code{n} times \code{d} rows and \code{k}
     columns. The ith row of \code{P}, \code{P[i,]}, contains the coefficients 
     for the polynomial over the ith interval, ordered from highest to 
-    lowest. There must be one row for each interval in x. }
+    lowest. There must be one row for each interval in \code{x}. }
   \item{n}{ number of intervals (\code{length(x) - 1}). }
   \item{k}{ polynomial order. }
   \item{d}{ number of polynomials. }
 
 }
 \references{
-  Fritsch, F. N. and Carlson, R. E., "Monotone Piecewise Cubic
-  Interpolation," SIAM Journal of Numerical Analysis, vol. 17, pp.238-246, 1980.
+  Fritsch, F. N. and Carlson, R. E., \dQuote{Monotone Piecewise Cubic
+  Interpolation}, \emph{SIAM Journal on Numerical Analysis}, vol. 17, pp. 238-246, 1980.
   
   Octave Forge \url{http://octave.sf.net}
 }
@@ -46,7 +46,7 @@ In contrast to \code{spline}, \code{pchip} preserves the monotonicity of
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }
 \seealso{ \code{\link{approx}}, \code{\link{spline}}, \code{\link{interp1}}  }
 \examples{
-xf <- linspace(0, 11, 500)
+xf <- seq(0, 11, length=500)
 yf <- sin(2*pi*xf/5)
 xp <- c(0:10)
 yp <- sin(2*pi*xp/5)

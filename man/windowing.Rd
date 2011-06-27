@@ -30,7 +30,7 @@ triang(n)
   \item{n}{ length of the filter; number of coefficients to generate. }
   \item{w}{ the reciprocal of the standard deviation for
     \code{gausswin}. Use larger \code{a} for a narrower window. }
-  \item{sym}{ 'symmetric' for a symmetric window, 'periodic' for a
+  \item{sym}{ \code{'symmetric'} for a symmetric window, \code{'periodic'} for a
     periodic window. }
 }
 \details{
@@ -47,10 +47,10 @@ to its negligible amplitude errors. This window has low pass-band ripple, but hi
   Filter coefficients.
 }
 \references{      
-     Oppenheim, A.V., and R.W. Schafer, "Discrete-Time Signal Processing", Upper Saddle River, NJ: Prentice-Hall, 1999.
+     Oppenheim, A.V., and Schafer, R.W., \emph{Discrete-Time Signal Processing}, Upper Saddle River, NJ: Prentice-Hall, 1999.
 
-Gade, S; Herlufsen, H; (1987) "Use of weighting functions in DFT/FFT
-analysis (Part I)", Bruel & Kjaer Technical Review No. 3.
+Gade, S., Herlufsen, H. (1987) \dQuote{Use of weighting functions in DFT/FFT
+analysis (Part I)}, \emph{Bruel & Kjaer Technical Review} No. 3.
 
 \url{http://en.wikipedia.org/wiki/Windowed_frame}
 
