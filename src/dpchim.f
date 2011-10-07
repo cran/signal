@@ -262,22 +262,19 @@ C
  5001 CONTINUE
 C     N.LT.2 RETURN.
       IERR = -1
-      CALL XERMSG ('SLATEC', 'DPCHIM',
-     +   'NUMBER OF DATA POINTS LESS THAN TWO', IERR, 1)
+      CALL REXIT("DPCHIM: Number of data points less than two.")
       RETURN
 C
  5002 CONTINUE
 C     INCFD.LT.1 RETURN.
       IERR = -2
-      CALL XERMSG ('SLATEC', 'DPCHIM', 'INCREMENT LESS THAN ONE', IERR,
-     +   1)
+      CALL REXIT("DPCHIM: Increment less than one.")
       RETURN
 C
  5003 CONTINUE
 C     X-ARRAY NOT STRICTLY INCREASING.
       IERR = -3
-      CALL XERMSG ('SLATEC', 'DPCHIM',
-     +   'X-ARRAY NOT STRICTLY INCREASING', IERR, 1)
+      CALL REXIT("DPCHIM: X-array not strictly increasing.")
       RETURN
 C------------- LAST LINE OF DPCHIM FOLLOWS -----------------------------
       END

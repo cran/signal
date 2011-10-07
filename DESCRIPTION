@@ -1,21 +1,20 @@
 Package: signal
 Title: Signal processing
-Version: 0.7-0
-Date: 2011-06-27
+Version: 0.7-1
+Date: 2011-10-07
 Author: For Details on the authors of original functions (e.g. ported
         from Octave) see the code and help files. Ported to R by Tom
-        Short <tshort@eprisolutions.com>. Later modifications by Uwe
+        Short <tshort@eprisolutions.com>.  Later modifications by Uwe
         Ligges, Sarah Schnackenberg, Hans-Werner Borchers, Sebastian
-        Krey.
+        Krey, Olaf Mersmann.
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 Depends: R (>= 2.10.0), stats, graphics, grDevices, MASS
 Suggests: pracma
-Description: A set of generally Matlab/Octave-compatible signal
-        processing functions. Includes filter generation utilities,
+Description: A set of signal processing R functions originally written
+        for Matlab/Octave.  Includes filter generation utilities,
         filtering functions, resampling routines, and visualization of
-        filter models. It also includes interpolation functions and
-        some Matlab comparability functions.
+        filter models. It also includes interpolation functions.
 License: GPL-2
-Packaged: 2011-06-27 12:39:22 UTC; ligges
+Packaged: 2011-10-07 12:40:15 UTC; ligges
 Repository: CRAN
-Date/Publication: 2011-06-27 18:12:09
+Date/Publication: 2011-10-08 06:44:53

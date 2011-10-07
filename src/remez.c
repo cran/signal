@@ -34,6 +34,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <R.h>
 
 #define CONST const
 #define BANDPASS       1
@@ -357,9 +358,9 @@ int Search(int r, int Ext[],
    {
       if (((E[i]>=E[i-1]) && (E[i]>E[i+1]) && (E[i]>0.0)) ||
           ((E[i]<=E[i-1]) && (E[i]<E[i+1]) && (E[i]<0.0))) {
-	// PAK: we sometimes get too many extremal frequencies
-	if (k >= 2*r) return -3;
-	foundExt[k++] = i;
+    // PAK: we sometimes get too many extremal frequencies
+    if (k >= 2*r) return -3;
+    foundExt[k++] = i;
       }
    }
 
@@ -401,14 +402,14 @@ int Search(int r, int Ext[],
          else if ((!up) && (E[foundExt[j]] > 0.0))
             up = 1;             /* switch to a maxima */
          else
-	 { 
+     { 
             alt = 0;
-	    // PAK: break now and you will delete the smallest overall
-	    // extremal.  If you want to delete the smallest of the
-	    // pair of non-alternating extremals, then you must do:
+        // PAK: break now and you will delete the smallest overall
+        // extremal.  If you want to delete the smallest of the
+        // pair of non-alternating extremals, then you must do:
             //
-	    // if (fabs(E[foundExt[j]]) < fabs(E[foundExt[j-1]])) l=j;
-	    // else l=j-1;
+        // if (fabs(E[foundExt[j]]) < fabs(E[foundExt[j-1]])) l=j;
+        // else l=j-1;
             break;              /* Ooops, found two non-alternating */
          }                      /* extrema.  Delete smallest of them */
       }  /* if the loop finishes, all extrema are alternating */
@@ -420,19 +421,19 @@ int Search(int r, int Ext[],
       if ((alt) && (extra == 1))
       {
          if (fabs(E[foundExt[k-1]]) < fabs(E[foundExt[0]]))
-	   /* Delete last extremal */
-	   l = k-1;
-	   // PAK: changed from l = foundExt[k-1]; 
+       /* Delete last extremal */
+       l = k-1;
+       // PAK: changed from l = foundExt[k-1]; 
          else
-	   /* Delete first extremal */
-	   l = 0;
-	   // PAK: changed from l = foundExt[0];     
+       /* Delete first extremal */
+       l = 0;
+       // PAK: changed from l = foundExt[0];     
       }
 
       for (j=l; j<k-1; j++)        /* Loop that does the deletion */
       {
          foundExt[j] = foundExt[j+1];
-         //	 assert(foundExt[j]<gridsize);
+         //  assert(foundExt[j]<gridsize);
       }
       k--;
       extra--;
@@ -583,9 +584,9 @@ int isDone(int r, int Ext[], double E[])
  ********************/
 
 void remez(double h[], int *numtaps,
-	  int *numband, const double bands[], 
-	  const double des[], const double weight[],
-	  int *type, int *griddensity)
+      int *numband, const double bands[], 
+      const double des[], const double weight[],
+      int *type, int *griddensity)
 {
    double *Grid, *W, *D, *E;
    int    i, iter, gridsize, r, *Ext;
@@ -695,7 +696,7 @@ void remez(double h[], int *numtaps,
       CalcParms(r, Ext, Grid, D, W, ad, x, y);
       CalcError(r, ad, x, y, gridsize, Grid, D, W, E);
       int err = Search(r, Ext, gridsize, E);
-      if (err) printf("error, %i, %i", err, gridsize);
+      if (err) error("error, %i, %i", err, gridsize);
       //      for(i=0; i <= r; i++) assert(Ext[i]<gridsize);
       if (isDone(r, Ext, E))
          break;
@@ -812,8 +813,8 @@ Frequency is in the range (0, 1), with 1 being the nyquist frequency")
     if (args(3).is_real_matrix()) {
       ColumnVector o_weight(args(3).vector_value());
       if (o_weight.length() != numbands) {
-	error("remez: need one weight for each band [=length(band)/2]");
-	return retval;
+    error("remez: need one weight for each band [=length(band)/2]");
+    return retval;
       }
       for (i=0; i < numbands; i++) weight[i] = o_weight(i);
     }
@@ -838,8 +839,8 @@ Frequency is in the range (0, 1), with 1 being the nyquist frequency")
   }
   if (nargin > 5) {
     if (args(5).is_real_scalar() 
-	&& !args(4).is_real_scalar() 
-	&& !args(3).is_real_scalar())
+    && !args(4).is_real_scalar() 
+    && !args(3).is_real_scalar())
       density = NINT(args(4).double_value());
     else {
       error("remez: incorrect argument list");
