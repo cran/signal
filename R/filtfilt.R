@@ -61,8 +61,8 @@
 filtfilt <- function(filt, ...) UseMethod("filtfilt")
 
 filtfilt.default <- function(filt, a, x, ...)  { 
-    y = filter(filt, a, c(x, array(0, 2*max(length(a),length(filt)))))
-    y = rev(filter(filt, a, rev(y)))[1:length(x)]
+    y = filter(filt, a, c(x, numeric(2 * max(length(a), length(filt)))))
+    y = rev(filter(filt, a, rev(y)))[seq_along(x)]
     y
 } 
 
@@ -74,5 +74,3 @@ filtfilt.Ma <- function(filt, x, ...) # FIR
 
 filtfilt.Zpg <- function(filt, x, ...) # Zero-pole-gain ARMA representation
   filtfilt(as.Arma(filt), x)
-
-

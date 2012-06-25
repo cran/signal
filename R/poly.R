@@ -43,7 +43,7 @@ poly <- function(x) {
     stop("poly(x), where x is a vector or a square matrix")
   }
   
-  y = array(0., n+1)
+  y = numeric(n+1)
   y[1] = 1
   for (j in 1:n) 
     y[2:(j+1)] = y[2:(j+1)] - v[j] * y[1:j]

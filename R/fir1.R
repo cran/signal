@@ -72,11 +72,11 @@ fir1 <- function(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"),
   
   ## build response function according to fir2 requirements
   bands <- length(w) + 1
-  f <- array(0, 2*bands)
+  f <- numeric(2*bands)
   f[2*bands] = 1
   f[seq(2, 2*bands-1, by = 2)] <- w
   f[seq(3, 2*bands-1, by = 2)] <- w
-  m <- array(0, 2*bands)
+  m <- numeric(2*bands)
   m[seq(1, 2*bands, by = 2)] <- (1:bands - (1-ftype)) %% 2
   m[seq(2, 2*bands, by = 2)] <- m[seq(1, 2*bands, by = 2)]
 

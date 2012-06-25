@@ -76,8 +76,8 @@ resample <- function(x, p, q = 1, d = 5) {
   ## to +/- order nearest neighbours.  For convenience, the original
   ## series is zero-padded before and after, implicitly setting the
   ## neighbours at the start of the signal to zero.
-  x = c(array(0, order), x, array(0, order))
-  y = array(0, length(idx))        # the new series
+  x = c(numeric(order), x, numeric(order))
+  y = numeric(length(idx))        # the new series
   for (i in (-order):order) {
     w = sinc(t - i) * (0.5 + 0.5*cos(pi * (t-i) / (order + 0.5)))  # hanning window
     y = y + x[idx+i+order] * w

@@ -21,5 +21,5 @@
 boxcar  <- function(n)  {
   if (length(n) > 1 || n != floor(n) || n <= 0)
     stop("n must be an integer > 0")
-  array(1, n)
+  rep.int(1, n)
 } 

@@ -92,10 +92,10 @@ bilinear.default <- function(Sz, Sp, Sg, T, ...)  {
   Zg <- Re(Sg * prod((2-Sz*T)/T) / prod((2-Sp*T)/T))
   Zp <- (2+Sp*T) / (2-Sp*T)
   if (is.null(Sz))
-    Zz <- -array(1, length(Zp))
+    Zz <- rep.int(-1, length(Zp))
   else {
     Zz <- (2+Sz*T) / (2-Sz*T)
-    Zz <- c(Zz, array(-1, p - z))
+    Zz <- c(Zz, rep.int(-1, p - z))
   } 
   Zpg(zero = Zz, pole = Zp, gain = Zg)
 } 

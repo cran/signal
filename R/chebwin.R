@@ -127,7 +127,7 @@ cheb  <- function(n, x)  {
   if (!(is.numeric(n) && (n == round(n)) && (n >= 0)))
     stop("n has to be a positive integer")
 
-  T <- array(0., length(x))
+  T <- numeric(length(x))
   
   ind <- x <= 1
   if (any(ind))

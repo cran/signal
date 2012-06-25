@@ -128,8 +128,8 @@ sftrans.default <- function(Sz, Sp, Sg, W, stop = FALSE, ...)  {
       if (is.null(Sz) || length(Sz) == 0)
         Sz = extend[1 + (1:(2*p)) %% 2]
       else {
-      	b = (C*(Fh-Fl)/2) / Sz
-      	Sz = c(b+sqrt(0i+b^2-Fh*Fl), b-sqrt(0i+b^2-Fh*Fl))
+        b = (C*(Fh-Fl)/2) / Sz
+        Sz = c(b+sqrt(0i+b^2-Fh*Fl), b-sqrt(0i+b^2-Fh*Fl))
         if (p > z)
           Sz = c(Sz, extend[1 + ((1:2)*(p-z)) %% 2])
       }
@@ -144,12 +144,12 @@ sftrans.default <- function(Sz, Sp, Sg, W, stop = FALSE, ...)  {
       b = Sp*(Fh-Fl)/(2*C)
       Sp = c(b+sqrt(0i+b^2-Fh*Fl), b-sqrt(0i+b^2-Fh*Fl))
       if (is.null(Sz) || length(Sz) == 0)
-        Sz = array(0, p)
+        Sz = numeric(p)
       else {
-      	b = Sz*(Fh-Fl) / (2*C)
-      	Sz = c(b+sqrt(0i+b^2-Fh*Fl), b-sqrt(0i+b^2-Fh*Fl))
+        b = Sz*(Fh-Fl) / (2*C)
+        Sz = c(b+sqrt(0i+b^2-Fh*Fl), b-sqrt(0i+b^2-Fh*Fl))
         if (p>z)
-          Sz = c(Sz, array(0, p-z))
+          Sz = c(Sz, numeric(p-z))
       }
     }
   } else {
@@ -163,11 +163,11 @@ sftrans.default <- function(Sz, Sp, Sg, W, stop = FALSE, ...)  {
       Sg = Sg * Re(prod(-Sz)/prod(-Sp))
       Sp = C * Fc / Sp
       if (is.null(Sz) || length(Sz) == 0)
-        Sz = array(0, p)
+        Sz = numeric(p)
       else {
         Sz = C * Fc / Sz
         if (p > z) 
-          Sz = c(Sz, array(0, p-z))
+          Sz = c(Sz, numeric(p-z))
       }
     } else {
 ## ----------------  -------------------------  ------------------------

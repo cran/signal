@@ -77,7 +77,7 @@ pchip  <- function(x, y, xi = NULL)  {
     stop("size of x and y must match")
   
   if (cy > 1)
-    h = diff(x) %x% array(1, cy) # kron multiplication
+    h = diff(x) %x% rep.int(1, cy) # kron multiplication
   
   ## not used: ## dy = diff(y) / h
   

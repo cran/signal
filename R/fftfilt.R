@@ -70,11 +70,11 @@ fftfilt  <- function(b, x, n = NULL) {
     B = fft(postpad(b, N))
 #    B = B[,rep(1., l_x)]
     R = ceiling(l_x / L)
-    y = array(0, l_x)
+    y = numeric(l_x)
     for (r  in  1:R) {
       lo = (r - 1) * L + 1
       hi = min(r * L, l_x)
-      tmp = array(0, N)
+      tmp = numeric(0)
       tmp[1:(hi-lo+1)] = x[lo:hi]
       tmp = ifft(fft(postpad(tmp, N)) * B)
       hi  = min(lo+N-1, l_x)

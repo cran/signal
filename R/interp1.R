@@ -208,10 +208,10 @@ interp1 <- function(x, y, xi,
 
   if (isTRUE(extrap == "extrap") || isTRUE(extrap)) {
     range <- seq_along(xi)
-    yi <- array(0, length(xi))
+    yi <- numeric(length(xi))
   } else {
     range <- which(xi >= min(x) & xi <= max(x))
-    yi <- array(extrap, length(xi))
+    yi <- rep.int(extrap, length(xi))
     xi <- xi[range]
   }
 

@@ -85,7 +85,7 @@ cheby1.default <- function(n, Rp, W, type = c("low", "high", "stop", "pass"), pl
   v0 <- asinh(1/epsilon)/n
   pole <- exp(1i*pi*c(seq(-(n-1), (n-1), by = 2))/(2*n))
   pole <- -sinh(v0)*Re(pole) + 1i*cosh(v0)*Im(pole)
-  zero <- array(0., 0)
+  zero <- numeric(0)
 
   ## compensate for amplitude at s=0
   gain <- prod(-pole)

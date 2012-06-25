@@ -35,7 +35,7 @@ interp <- function(x, q, n = 4, Wc = 0.5)  {
   if (q != round(q))
     stop("interp only works with integer q.")
 
-  y = array(0, length(x)*q + q*n + 1)
+  y = numeric(length(x)*q + q*n + 1)
   y[seq(1, length(x)*q, by = q)] = x
   b = fir1(2*q*n+1, Wc/q)
   y = q*fftfilt(b, y)

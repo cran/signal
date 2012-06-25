@@ -84,7 +84,7 @@ butter.default <- function(n, W, type = c("low", "high", "stop", "pass"), plane 
   pole <- C*exp(1i*pi*(2*1:n + n - 1) / (2*n))
   if (n %% 2 == 1)
     pole[(n+1) / 2] <- -1  # pure real value at exp(i*pi)
-  zero <- array(0., 0)
+  zero <- numeric(0)
   gain <- C^n
 
   ZPG <- Zpg(zero = zero, pole = pole, gain = gain)

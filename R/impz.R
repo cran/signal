@@ -81,9 +81,9 @@ impz.default <- function(filt, a = 1, n = NULL, Fs = 1, ...)  {
     n = length(b)
   }
   if (length(a) == 1)
-    x = fftfilt(b/a, c(1, array(0, n-1)))
+    x = fftfilt(b/a, c(1, numeric(n-1)))
   else
-    x = filter(b, a, c(1, array(0, n-1)))
+    x = filter(b, a, c(1, numeric(n-1)))
   t = (0:(n-1))/Fs
   
   res = list(x = x, t = t)
