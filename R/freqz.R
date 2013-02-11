@@ -84,7 +84,7 @@ print.freqz <- plot.freqz <- function(x, ...)
 freqz.default <- function(filt = 1, a = 1, n = 512, region = NULL, Fs = 2*pi, ...)  {
   b <- filt
   if (is.null(region))
-    region <- if (is.real(b) && is.real(a)) "half" else "whole"
+    region <- if (is.double(b) && is.double(a)) "half" else "whole"
   if (length(n) > 1) { ## Explicit frequency vector given
     f <- n
     w <- 2*pi*f/Fs

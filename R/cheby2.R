@@ -100,7 +100,7 @@ cheby2.default <- function(n, Rp, W, type = c("low", "high", "stop", "pass"), pl
   ## Because of the vagaries of floating point computations, the
   ## prod(pole)/prod(zero) sometimes comes out as negative and
   ## with a small imaginary component even though analytically
-  ## the gain will always be positive, hence the abs(real(...))
+  ## the gain will always be positive, hence the abs(Re(...))
   gain <- abs(Re(prod(pole) / prod(zero)))
 
   ZPG <- Zpg(zero = zero, pole = pole, gain = gain)

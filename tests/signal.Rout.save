@@ -1,8 +1,8 @@
 
-R version 2.13.0 Patched (2011-06-17 r56162)
-Copyright (C) 2011 The R Foundation for Statistical Computing
+R Under development (unstable) (2013-02-11 r61900) -- "Unsuffered Consequences"
+Copyright (C) 2013 The R Foundation for Statistical Computing
 ISBN 3-900051-07-0
-Platform: i386-pc-mingw32/i386 (32-bit)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,7 +21,7 @@ Loading required package: MASS
 
 Attaching package: 'signal'
 
-The following object(s) are masked from 'package:stats':
+The following object is masked from 'package:stats':
 
     filter, poly
 
@@ -874,3 +874,6 @@ Error in signal:::fractdiff(1, 1) : fractdiff: x must be a vector
 > all.equal(Test248, savedTest248)
 [1] TRUE
 > 
+> proc.time()
+   user  system elapsed 
+   0.81    0.07    0.87 

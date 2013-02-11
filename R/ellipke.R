@@ -44,7 +44,7 @@ ellipke <- function(m, Nmax=16) {
   ldim <- dim(m)
   if(is.null(ldim)) ldim <- length(m)
   k <- e <- array(0, ldim)
-  if (!any(is.real(m)))
+  if (!any(is.double(m)))
     stop("ellipke must have real m")
   if (any(m > 1))
     stop("ellipke must have m <= 1")

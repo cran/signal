@@ -4,14 +4,14 @@
 \alias{filter.Arma}
 \alias{filter.Ma}
 \alias{filter.Zpg}
-\title{ Filter a signal. }
+\title{Filter a signal}
 \description{
   Generic filtering function. The default is to filter with an ARMA
   filter of given coefficients. The default filtering operation follows
   Matlab/Octave conventions.
 }
 \usage{
-\method{filter}{default}(filt, a, x, \dots)
+\method{filter}{default}(filt, a, x, init, init.x, init.y, \dots)
 
 \method{filter}{Arma}(filt, x, \dots)
 
@@ -25,6 +25,8 @@
     specifies an arbitrary filter operation.}
   \item{a}{ the autoregressive (recursive) coefficients of an ARMA filter. }
   \item{x}{ the input signal to be filtered. }
+  init, init.x, init.y
+  \item{init, init.x, init.y}{allows to supply initial data for the filter - this allows to filter very large timeseries in pieces.}
   \item{\ldots}{ additional arguments (ignored). }
 }
 \details{

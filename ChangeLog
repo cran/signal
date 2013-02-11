@@ -1,0 +1,10 @@
+2013-02-11  
+	* Version 0.7-3
+	* This file has been added
+	* Authors@R listing, trying to mention all contributors 
+		that I found in the sources
+	* New function levinson for Durbin-Levinson Recursion (formerly in tuneR, now exported)
+	* Converted as.real -> as.double and friends
+	* new arguments init, init.x, and init.y in filter.default to provide initial values, 
+		contributed by Vladimir Dergachev
+	* fix for sinc() function by Christophe Rhodes

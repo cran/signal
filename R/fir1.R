@@ -85,7 +85,7 @@ fir1 <- function(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"),
   if (n %% 2 == 1 && m[2*bands] == 1) { 
     warning("n must be even for highpass and bandstop filters. Incrementing.")
     n <- n + 1
-    if (is.vector(window) && is.real(window)) {
+    if (is.vector(window) && is.double(window)) {
       ## End the window using interpolation
       M <- length(window)
       if (M == 1)

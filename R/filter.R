@@ -21,19 +21,31 @@ filter <- function(filt, ...) UseMethod("filter")
 
 # Octave/Matlab-compatible filter function
 # y = filter (b, a, x)
-filter.default <- function(filt, a, x, ...) {
-  if (length(filt)) 
-    x <- na.omit(stats:::filter(c(rep(0,length(filt) - 1), x), filt / a[1] , sides = 1))
-  if (length(a) > 2) 
-    x <- stats:::filter(x, -a[-1] / a[1], method = "recursive")
+filter.default <- function(filt, a, x, init, init.x, init.y, ...) {
+  if(missing(init.x)) 
+    init.x <- c(rep(0, length(filt) - 1))
+  if(length(init.x) != length(filt) - 1)
+    stop("length of init.x should match filter length-1 = ", length(filt)-1)
+  if(missing(init) && !missing(init.y))
+    init <- rev(init.y)
+  if(all(is.na(x)))
+    return(x)
+  if (length(filt)) {
+    x1 <- stats:::filter(c(init.x, x), filt / a[1], sides = 1)
+    if(all(is.na(x1)))
+        return(x)
+    x <- na.omit(x1, filt / a[1] , sides = 1)
+    }
+  if (length(a) >= 2)
+    x <- stats:::filter(x, -a[-1] / a[1], method = "recursive", init = init)
   x
 }
 
 filter.Arma <- function(filt, x, ...) # IIR
-  filter(filt$b, filt$a, x)
+  filter(filt$b, filt$a, x, ...)
 
 filter.Ma <- function(filt, x, ...) # FIR
-  filter(unclass(filt), 1, x)
+  filter(unclass(filt), 1, x, ...)
 
 filter.Zpg <- function(filt, x, ...) # zero-pole-gain form
   filter(as.Arma(filt), x)
@@ -171,7 +183,9 @@ postpad <- function(x, n) {
 ifft <- function(x)
   fft(x, inverse = TRUE) / length(x)
 
-sinc <- function(x) sin(pi*x)/(pi*x)
+sinc <- function(x){
+    ifelse(x==0, 1, sin(pi*x) / (pi*x))
+}
 
 logseq <- function(from, to, n = 500)
   exp(seq(log(abs(from)), log(abs(to)), length = n))

@@ -44,7 +44,7 @@ kaiser <- function(n, beta)  {
   if ( !(length(n) == 1 && (n == round(n)) && (n > 0))) 
     stop("kaiser:  n has to be a positive integer")
 
-  if ( !(length(beta) == 1 && (beta == as.real(beta))))
+  if ( !(length(beta) == 1 && (beta == as.double(beta))))
     stop("kaiser:  beta has to be a real scalar")
   
   if (n == 1)
@@ -57,4 +57,3 @@ kaiser <- function(n, beta)  {
   }
   w
 }
-

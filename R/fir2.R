@@ -67,7 +67,7 @@ fir2 <- function(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n+1
     stop("grid_n and ramp_n must be integers")
 
   ## find the window parameter, or default to hamming
-#  if (!isreal(window))
+#  if (!is.double(window))
 #    window = feval(window, n+1)
   if (length(window) != n+1)
     stop("window must be of length n+1")

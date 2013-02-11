@@ -12,7 +12,7 @@ export(bartlett, bilinear, blackman, boxcar, butter, buttord,
        Arma, as.Arma, Ma, Zpg, as.Zpg,
        polyval, conv, ifft, filtfilt, fir1, fir2, flattopwin,
        freqs, freqs_plot, freqz, freqz_plot, gausswin, grpdelay,
-       hamming, hanning, impz, interp1, interp, kaiser, kaiserord,
+       hamming, hanning, impz, interp1, interp, kaiser, kaiserord, levinson,
        pchip, poly, remez, resample, sftrans, sgolay, sgolayfilt,
        specgram, triang, unwrap, zplane)
 
