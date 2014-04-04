@@ -21,7 +21,7 @@ Loading required package: MASS
 
 Attaching package: 'signal'
 
-The following object is masked from 'package:stats':
+The following objects are masked from 'package:stats':
 
     filter, poly
 

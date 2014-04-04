@@ -37,12 +37,12 @@ levinson <- function(x, p=NULL){
     }
     if((!is.null(p) && (p!=as.integer(p))) || (p < 2)) 
         stop("p must be integer >= 2.")
-    if(is.vector(x)){
+    if(is.numeric(x) && is.null(dim(x))){
         lx <- length(x)
         if(is.null(p) || p >= lx) p <- lx - 1
         r <- fit(x, p)
     } else {
-        if(is.matrix(x)){
+        if(is.numeric(x) && !(is.null(dim(x)))){
             lx <- dim(x)
             if(is.null(p) || p >= lx[1]) p <- lx[1] - 1
             zr <- apply(x, 2, function(y) fit(y, p))
@@ -53,7 +53,7 @@ levinson <- function(x, p=NULL){
             ref <- t(zr[,-(1:(p+2)), drop=FALSE])
             r <- list(a=a, v=v, ref=ref)
         } else {
-            stop("x must be a vector or matrix.")
+            stop("x must be a numeric vector or matrix.")
         }
     }
     return(r)

@@ -1,12 +1,12 @@
-c42ee9c97764a0010c45da4cfbe7c13d *ChangeLog
-8e1cf63005171999cf9ece59d267ad23 *DESCRIPTION
-e66d291b1479f5acfd22f4debf123df0 *NAMESPACE
+8dece854d4737dd810a3912cb9e5dab2 *ChangeLog
+c8ea970d62a53a3bd4a4f59b91777bdf *DESCRIPTION
+0115c230bc4c15f71517c1a533cc6c9b *NAMESPACE
 2f5512a9c5d22704aaae2ca5e9315bab *R/bartlett.R
 d12cb7cdcc7d75f7f16e35d4d8777bd7 *R/bilinear.R
 a0f29fa4df0ffb0e7653fde2a40258b4 *R/blackman.R
 e92c37f384a114197d0a9c1702bf0c67 *R/boxcar.R
 1ff9219c9defab0e37865a108d13cd23 *R/butter.R
-8929eafc1391606d7487906a4c944075 *R/buttord.R
+6c1da10a27ff5fb8f2881da0ba5e4744 *R/buttord.R
 b988de82de8b6b952778d4e5f5bc5453 *R/cheb1ord.R
 7111c4d1d657f04ae379ad56b30794e7 *R/chebwin.R
 6a534ca5ad77cccfe80f136e9bb3a948 *R/cheby1.R
@@ -17,7 +17,7 @@ ddd307ddfeceb84726b294e1f0fc60d4 *R/ellip.R
 15d2c33c6864fa769456e54c931a4cc4 *R/ellipke.R
 89cc9dae03aa40f6d6fd1e7af1dcff12 *R/ellipord.R
 78b587363b825383f5e8936c044a9e5b *R/fftfilt.R
-14455944258e3bc7ac70b703c67f02d3 *R/filter.R
+717ad345e64e204788b1f13c4647d14d *R/filter.R
 d22812943b72798aa0bd8c632028e5ce *R/filtfilt.R
 86108dedf08e73c5d38b28d44f332675 *R/fir1.R
 9134edc7e9d596c0afe0424d532d700e *R/fir2.R
@@ -34,7 +34,7 @@ bd72458c32d112a8bbf8853b5d06be83 *R/grpdelay.R
 ba9f5da2f20470201e6b0357580abcfe *R/interp1.R
 dbd25d5ae84d07f4e2716754cf2dd862 *R/kaiser.R
 67254bc609bd0e1f057525f0f7519003 *R/kaiserord.R
-4d8f50ca270ed711c9f7b3c96de6137a *R/levinson.R
+8784053468425a1d4218b1619f28af18 *R/levinson.R
 29c62016148171faac4bcb591dac0a64 *R/pchip.R
 d3c0111c04237390dae0ef4d079fd193 *R/poly.R
 a593159757d3f2e0622805a34f293f4e *R/remez.R
@@ -48,7 +48,7 @@ d88d5b61edaeb689c0b5ae692ea4145c *R/specgram.R
 ea2c3a9563f5cf0298fc6cde2978cf12 *R/zplane.R
 f2eb20959bd46f29123db036a74ae25c *data/wav.RData
 db4af1a1bc983be668eb4f47eda8f2d2 *inst/CITATION
-f7b05a19ba4731c5ac61b18a13a5e8bf *inst/LICENSE
+7020b422de24e4ed1e7d0eeb795cb226 *inst/COPYRIGHTS
 987bd28a47c366f3e63f65833a23a2e4 *inst/README_Parks-McClellan
 8d565da9f6de47c26df01defc39e93de *man/Arma.Rd
 5e6496a8a07a7f70faf06a6392f65674 *man/FilterOfOrder.Rd
@@ -72,7 +72,7 @@ b9eb47b07bec0a5f663ca4bb6268d173 *man/filter.Rd
 f0b3f79ed7656e3ae504f2cab73d9bd6 *man/fir1.Rd
 dd2e6a1f921438e3f83ce19e2ae8a65a *man/fir2.Rd
 dd0bb9200764f97fc5478d3eedd00365 *man/freqs.Rd
-12da7967d8b7434d0eb7f831f685e603 *man/freqz.Rd
+b505d9e3ea3bf1621893fab4c985ff25 *man/freqz.Rd
 7dbc633c1b0f0fee10eaae27143ec4aa *man/grpdelay.Rd
 a6ef9356870e44e1fecb03eecd5f453b *man/ifft.Rd
 1430a65b635ab8a3218340cbc1293588 *man/impz.Rd
@@ -102,6 +102,9 @@ d00d48777d32650957f3f0d7d6d7d47f *man/unwrap.Rd
 35a3764e2d884b767550345ade67c757 *src/dpchim.f
 ef87bafd924b5ccea084c021ddd39fdb *src/dpchst.f
 374ec0cfb4ed58ab347117988811fc35 *src/remez.c
+d1b664845bb56994f2bfd3373ec082f4 *tests/TestLevinson.R
+e5d42e11a712c7c8a3adf9f88633295e *tests/TestLevinson.Rout.save
+29c2fcb9bcd98d770d2e6a9c84ee649f *tests/savedTestLev.Rdata
 b72663602f6a8809146993a85a1dc654 *tests/savedTests.Rdata
 ca4eebace30cb538fa724ea7f6876054 *tests/signal.R
-704e766fba2f2007e1216c4111820303 *tests/signal.Rout.save
+3fc03bde37a25c44d8b846641dbacdf7 *tests/signal.Rout.save

@@ -60,7 +60,26 @@ buttord <- function(Wp, Ws, Rp, Rs)  {
     type <- if (any(stop)) "high" else "low"
   }
 
-  if (any(stop)) type <- ""
+## Not sure why this was needed, but it generated wrong results:
+#  if (any(stop)) type <- ""
+## Quoting Andy Babour:
+# I'm writing to see if 'signal::buttord'  is producing correct results.
+# Here's an example (using version 0.7-3):
+#
+#    b <- buttord(.003, .001, 0.5, 29)
+#    try(plot(freqz(butter(b)))) # error
+#
+#
+#I don't doubt the value of the resulting filter order, but it sets
+#'type' incorrectly to an empty string; whereas, the documentation
+#implies it should be the string "high".  Conversely, if I flip Ws and Wp
+#the result correctly shows type="low".
+#
+#I can easily get around this with
+#
+#    b$type <- "high"
+#    plot(freqz(butter(b))) # ok 
+
 
   ## warp the target frequencies according to the bilinear transform
   Ws <- (2/T) * tan(pi * Ws / T)

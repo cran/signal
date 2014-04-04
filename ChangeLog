@@ -8,3 +8,8 @@
 	* new arguments init, init.x, and init.y in filter.default to provide initial values, 
 		contributed by Vladimir Dergachev
 	* fix for sinc() function by Christophe Rhodes
+2014-04-04
+	* Version 0.7-4
+	* buttord bugfix, filter rules disabled in case we do no longer understand
+	* Changes ::: -> :: when calling stats::filter now
+	* renamed and achanged file LICENSE -> COPYRIGHTS

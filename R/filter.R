@@ -31,13 +31,13 @@ filter.default <- function(filt, a, x, init, init.x, init.y, ...) {
   if(all(is.na(x)))
     return(x)
   if (length(filt)) {
-    x1 <- stats:::filter(c(init.x, x), filt / a[1], sides = 1)
+    x1 <- stats::filter(c(init.x, x), filt / a[1], sides = 1)
     if(all(is.na(x1)))
         return(x)
     x <- na.omit(x1, filt / a[1] , sides = 1)
     }
   if (length(a) >= 2)
-    x <- stats:::filter(x, -a[-1] / a[1], method = "recursive", init = init)
+    x <- stats::filter(x, -a[-1] / a[1], method = "recursive", init = init)
   x
 }
 

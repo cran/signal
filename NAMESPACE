@@ -1,6 +1,8 @@
 useDynLib(signal)
 
 import("MASS")
+import("graphics")
+import("grDevices")
 
 export(bartlett, bilinear, blackman, boxcar, butter, buttord,
        chebwin, cheb1ord, cheby1, cheby2, chirp,

@@ -62,8 +62,8 @@ needed there.
 }
 \value{
   For \code{freqz} list of class \code{freqz} with items:
-  \item{h}{ array of frequencies. }
-  \item{f}{ complex array of frequency responses at those frequencies.}
+  \item{h}{ complex array of frequency responses at those frequencies.}
+  \item{f}{ array of frequencies. }
 
 }
 \references{ 
