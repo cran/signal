@@ -13,3 +13,8 @@
 	* buttord bugfix, filter rules disabled in case we do no longer understand
 	* Changes ::: -> :: when calling stats::filter now
 	* renamed and achanged file LICENSE -> COPYRIGHTS
+	* moved packages from Depends to Imports
+	* minor update for reference output
+2015-05-31
+	* version 0.7-5
+	* use requireNAmespace() rather than library()

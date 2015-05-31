@@ -91,10 +91,10 @@ roots <- function(x, method = c("polyroot", "eigen")) {
         return(polyroot(rev(x)))
     if(!is.numeric(x))
         stop("x must be numeric")
-    success <- library("pracma", pos = "package:base", logical.return = TRUE, warn.conflicts = FALSE)
+    success <- requireNamespace("pracma", quietly = TRUE)
     if(!success)
         stop("method 'eigen' is only available if package 'pracma' is installed")
-    rev(pracma::roots(as.numeric(x)))
+    rev(roots(as.numeric(x)))
 }
 
 Arma <- function(b, a) {

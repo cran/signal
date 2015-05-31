@@ -1,5 +1,5 @@
-8dece854d4737dd810a3912cb9e5dab2 *ChangeLog
-c8ea970d62a53a3bd4a4f59b91777bdf *DESCRIPTION
+e9e37e2a9d718cefad9e095730fd7367 *ChangeLog
+c8e6f858d4f26da2c920bd1b40fb4b2d *DESCRIPTION
 0115c230bc4c15f71517c1a533cc6c9b *NAMESPACE
 2f5512a9c5d22704aaae2ca5e9315bab *R/bartlett.R
 d12cb7cdcc7d75f7f16e35d4d8777bd7 *R/bilinear.R
@@ -17,7 +17,7 @@ ddd307ddfeceb84726b294e1f0fc60d4 *R/ellip.R
 15d2c33c6864fa769456e54c931a4cc4 *R/ellipke.R
 89cc9dae03aa40f6d6fd1e7af1dcff12 *R/ellipord.R
 78b587363b825383f5e8936c044a9e5b *R/fftfilt.R
-717ad345e64e204788b1f13c4647d14d *R/filter.R
+ec1b4ba96dbcbb780673de0eebe86574 *R/filter.R
 d22812943b72798aa0bd8c632028e5ce *R/filtfilt.R
 86108dedf08e73c5d38b28d44f332675 *R/fir1.R
 9134edc7e9d596c0afe0424d532d700e *R/fir2.R
@@ -47,7 +47,7 @@ d88d5b61edaeb689c0b5ae692ea4145c *R/specgram.R
 314a9cbd4ead58c0548dac631fba69b3 *R/unwrap.R
 ea2c3a9563f5cf0298fc6cde2978cf12 *R/zplane.R
 f2eb20959bd46f29123db036a74ae25c *data/wav.RData
-db4af1a1bc983be668eb4f47eda8f2d2 *inst/CITATION
+d24cc5830924402cbac76d1fa423baa7 *inst/CITATION
 7020b422de24e4ed1e7d0eeb795cb226 *inst/COPYRIGHTS
 987bd28a47c366f3e63f65833a23a2e4 *inst/README_Parks-McClellan
 8d565da9f6de47c26df01defc39e93de *man/Arma.Rd

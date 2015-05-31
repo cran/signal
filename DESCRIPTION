@@ -1,7 +1,7 @@
 Package: signal
 Title: Signal processing
-Version: 0.7-4
-Date: 2014-04-04
+Version: 0.7-5
+Date: 2015-05-31
 Authors@R: c(person("Uwe", "Ligges", role = c("aut", "cre"), email="ligges@statistik.tu-dortmund.de", comment = "new maintainer"),
  person("Tom", "Short", role = "aut", email = "tshort@eprisolutions.com", comment="port to R"),
  person("Paul", "Kienzle", role = "aut", comment="majority of the original sources"),
@@ -31,7 +31,7 @@ Description: A set of signal processing R functions originally written for Matla
   resampling routines, and visualization of filter models. It also
   includes interpolation functions.
 License: GPL-2
-Packaged: 2014-04-04 17:58:48 UTC; ligges
+Packaged: 2015-05-31 15:45:15 UTC; ligges
 Author: Uwe Ligges [aut, cre] (new maintainer),
   Tom Short [aut] (port to R),
   Paul Kienzle [aut] (majority of the original sources),
@@ -56,4 +56,4 @@ Author: Uwe Ligges [aut, cre] (new maintainer),
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2014-04-04 20:02:19
+Date/Publication: 2015-05-31 17:46:32
