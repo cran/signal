@@ -37,13 +37,13 @@
 ## S -> C Fc/S       pole: 0                    zero: 0
 ##                   gain: -x                   gain: -1/x
 ## ----------------  -------------------------  ------------------------
-## Band Pass         zero: b ± sqrt(b^2-FhFl)   pole: b ± sqrt(b^2-FhFl)
+## Band Pass         zero: b +- sqrt(b^2-FhFl)   pole: b +- sqrt(b^2-FhFl)
 ##        S^2+FhFl   pole: 0                    zero: 0
 ## S -> C --------   gain: C/(Fh-Fl)            gain: (Fh-Fl)/C
 ##        S(Fh-Fl)   b=x/C (Fh-Fl)/2            b=x/C (Fh-Fl)/2
 ## ----------------  -------------------------  ------------------------
-## Band Stop         zero: b ± sqrt(b^2-FhFl)   pole: b ± sqrt(b^2-FhFl)
-##        S(Fh-Fl)   pole: ±sqrt(-FhFl)         zero: ±sqrt(-FhFl)
+## Band Stop         zero: b +- sqrt(b^2-FhFl)   pole: b +- sqrt(b^2-FhFl)
+##        S(Fh-Fl)   pole: +-sqrt(-FhFl)         zero: +-sqrt(-FhFl)
 ## S -> C --------   gain: -x                   gain: -1/x
 ##        S^2+FhFl   b=C/x (Fh-Fl)/2            b=C/x (Fh-Fl)/2
 ## ----------------  -------------------------  ------------------------
@@ -116,8 +116,8 @@ sftrans.default <- function(Sz, Sp, Sg, W, stop = FALSE, ...)  {
     Fh = W[2]
     if (stop) {
 ## ----------------  -------------------------  ------------------------
-## Band Stop         zero: b ± sqrt(b^2-FhFl)   pole: b ± sqrt(b^2-FhFl)
-##        S(Fh-Fl)   pole: ±sqrt(-FhFl)         zero: ±sqrt(-FhFl)
+## Band Stop         zero: b +- sqrt(b^2-FhFl)   pole: b +- sqrt(b^2-FhFl)
+##        S(Fh-Fl)   pole: +-sqrt(-FhFl)         zero: +-sqrt(-FhFl)
 ## S -> C --------   gain: -x                   gain: -1/x
 ##        S^2+FhFl   b=C/x (Fh-Fl)/2            b=C/x (Fh-Fl)/2
 ## ----------------  -------------------------  ------------------------
@@ -135,7 +135,7 @@ sftrans.default <- function(Sz, Sp, Sg, W, stop = FALSE, ...)  {
       }
     } else {
 ## ----------------  -------------------------  ------------------------
-## Band Pass         zero: b ± sqrt(b^2-FhFl)   pole: b ± sqrt(b^2-FhFl)
+## Band Pass         zero: b +- sqrt(b^2-FhFl)   pole: b +- sqrt(b^2-FhFl)
 ##        S^2+FhFl   pole: 0                    zero: 0
 ## S -> C --------   gain: C/(Fh-Fl)            gain: (Fh-Fl)/C
 ##        S(Fh-Fl)   b=x/C (Fh-Fl)/2            b=x/C (Fh-Fl)/2

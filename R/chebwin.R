@@ -1,4 +1,4 @@
-## Copyright (C) 2002 André Carezia
+## Copyright (C) 2002 Andras Carezia
 ##
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -52,7 +52,7 @@
 
 ## $Id: chebwin.m,v 1.4 2005/12/29 03:54:39 pkienzle Exp $
 ##
-## Author:  André Carezia <acarezia@uol.com.br>
+## Author:  Andras Carezia <acarezia@uol.com.br>
 ## Description:  Coefficients of the Dolph-Chebyshev window
 
 chebwin  <- function(n, at)  {
@@ -91,7 +91,7 @@ chebwin  <- function(n, at)  {
   w
 }
 
-## Copyright (C) 2002 André Carezia
+## Copyright (C) 2002 Andras Carezia
 ##
 ## This program is free software; you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -120,7 +120,7 @@ chebwin  <- function(n, at)  {
 ## If x is a vector, the output is a vector of the same size, where each
 ## element is calculated as y(i) = Tn(x(i)).
 
-## Author:  André Carezia <acarezia@uol.com.br>
+## Author:  Andras Carezia <acarezia@uol.com.br>
 ## Description:  Value of the Chebyshev polynomials
 
 cheb  <- function(n, x)  {

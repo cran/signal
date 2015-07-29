@@ -35,7 +35,7 @@ J. O. Smith and P. Gossett (1984). A flexible sampling-rate
 conversion method. In ICASSP-84, Volume II, pp. 19.4.1-19.4.2. 
 New York: IEEE Press.
 
-\url{http://www-ccrma.stanford.edu/~jos/resample/}
+\url{http://dx.doi.org/10.1109/ICASSP.1984.1172555}
 
   Octave Forge \url{http://octave.sf.net}
 }

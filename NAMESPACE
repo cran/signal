@@ -3,6 +3,8 @@ useDynLib(signal)
 import("MASS")
 import("graphics")
 import("grDevices")
+importFrom("stats", "approx", "fft", "mvfft", "na.omit", "optimize", "runmed", "splinefun")
+importFrom("utils", "head")
 
 export(bartlett, bilinear, blackman, boxcar, butter, buttord,
        chebwin, cheb1ord, cheby1, cheby2, chirp,

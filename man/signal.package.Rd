@@ -61,7 +61,7 @@ main credit goes to the original Octave authors:
 
   Package \code{\link[matlab:matlab-package]{matlab}} by P. Roebuck
 
-  For Matlab/Octave conversion and compatibility, see \url{http://37mm.no/mpy/octave-r.html}
+  For Matlab/Octave conversion and compatibility, see \url{http://mathesaurus.sourceforge.net/octave-r.html}
   by Vidar Bronken Gundersen and \url{http://cran.r-project.org/doc/contrib/R-and-octave.txt} by Robin Hankin. 
 }
 \keyword{ package }

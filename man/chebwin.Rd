@@ -36,7 +36,7 @@ maximum value unitary.
 \references{
 Peter Lynch, \dQuote{The Dolph-Chebyshev Window: A Simple Optimal Filter},
 Monthly Weather Review, Vol. 125, pp. 655-660, April 1997.
-\url{http://www.maths.tcd.ie/~plynch/Publications/Dolph.pdf}
+\url{http://mathsci.ucd.ie/~plynch/Publications/Dolph.pdf}
 
 C. Dolph, \dQuote{A current distribution for broadside arrays which
 optimizes the relationship between beam width and side-lobe level},
