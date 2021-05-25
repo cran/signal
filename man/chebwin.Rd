@@ -42,7 +42,7 @@ C. Dolph, \dQuote{A current distribution for broadside arrays which
 optimizes the relationship between beam width and side-lobe level},
 Proc. IEEE, 34, pp. 335-348.
 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{Original Octave version by André Carezia, \email{acarezia@uol.com.br}. Conversion to R by Tom Short.}
 \seealso{ \code{\link{kaiser}} }

@@ -70,11 +70,11 @@ inside loops and function calls, so explicit calls to \code{print} or
 }
 \references{
   
-  \url{http://ccrma.stanford.edu/~jos/filters/Numerical_Computation_Group_Delay.html}
+  \url{https://ccrma.stanford.edu/~jos/filters/Numerical_Computation_Group_Delay.html}
 
-  \url{http://en.wikipedia.org/wiki/Group_delay}
+  \url{https://en.wikipedia.org/wiki/Group_delay}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 
 \author{ Original Octave version by Julius O. Smith III and Paul Kienzle. Conversion to R by Tom Short. }

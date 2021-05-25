@@ -273,6 +273,9 @@ Error in signal:::fractdiff(1, 1) : fractdiff: x must be a vector
 > Test180 <- interp1(x21, x21, c(0, 1, 1.4, 3, 4), 'linear') # test
 > Test181 <- interp1(1:2, 1:2, 1.4, 'linear') # test
 > Test182 <- interp1(t(0:5), t(x18), c(), 'nearest') # test isempty
+Warning message:
+In regularize.values(x, y, ties, missing(ties), na.rm = na.rm) :
+  collapsing to unique 'x' values
 > Test183 <- interp1(0:5, x18, c(), 'nearest')    # test isempty
 > Test184 <- interp1(t(0:5), t(x18), c(), 'linear') # test isempty
 > Test185 <- interp1(0:5, x18, c(), 'linear')    # test isempty

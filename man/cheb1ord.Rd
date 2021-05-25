@@ -29,7 +29,7 @@ cheb1ord(Wp, Ws, Rp, Rs)
   This object can be passed directly to \code{cheby1} to compute filter coefficients.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle,
   \email{pkienzle@user.sf.net} and by Laurent S. Mazet. Conversion to R by Tom Short. }

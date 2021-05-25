@@ -29,9 +29,9 @@ fir1(n, w, type = c("low", "high", "stop", "pass", "DC-0", "DC-1"),
 }
 \references{
 
-\url{http://en.wikipedia.org/wiki/Fir_filter} 
+\url{https://en.wikipedia.org/wiki/Fir_filter} 
   
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle,
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

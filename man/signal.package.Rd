@@ -55,14 +55,14 @@ main credit goes to the original Octave authors:
   Current maintainer is Uwe Ligges \email{ligges@statistik.tu-dortmund.de}.
 }
 \references{
-  \url{http://en.wikipedia.org/wiki/Category:Signal_processing}
+  \url{https://en.wikipedia.org/wiki/Category:Signal_processing}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 
   Package \code{\link[matlab:matlab-package]{matlab}} by P. Roebuck
 
   For Matlab/Octave conversion and compatibility, see \url{http://mathesaurus.sourceforge.net/octave-r.html}
-  by Vidar Bronken Gundersen and \url{http://cran.r-project.org/doc/contrib/R-and-octave.txt} by Robin Hankin. 
+  by Vidar Bronken Gundersen and \url{https://cran.r-project.org/doc/contrib/R-and-octave.txt} by Robin Hankin. 
 }
 \keyword{ package }
 \examples{

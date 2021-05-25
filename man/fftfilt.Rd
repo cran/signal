@@ -35,7 +35,7 @@ of two larger than \code{n} and \code{length(b)}.}
   used with \code{filter}.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Kurt Hornik and John W. Eaton.
  Conversion to R by Tom Short. }

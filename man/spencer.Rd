@@ -19,7 +19,7 @@ spencerFilter()
   to \code{filter}.
 }
 \references{ 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Friedrich Leisch. Conversion to R by Tom Short. }
 

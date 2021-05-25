@@ -45,9 +45,9 @@
 Parente Ribeiro, E., Notas de aula da disciplina TE498 -  Processamento 
 Digital de Sinais, UFPR, 2001/2002.
 
-\url{http://en.wikipedia.org/wiki/Elliptic_filter}
+\url{https://en.wikipedia.org/wiki/Elliptic_filter}
 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 
 }
 \author{ Original Octave version by Paulo Neis

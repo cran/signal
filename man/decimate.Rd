@@ -24,7 +24,7 @@ Makes use of the \code{\link{filtfilt}} function with all its limitations.
   The decimated signal, an array of length \code{ceiling(length(x) / q)}.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

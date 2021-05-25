@@ -27,7 +27,7 @@ removing high frequency squiggles.
   The filtered signal, of \code{length(x)}.
 }
 \references{
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@users.sf.net}. Modified by Pascal Dupuis. Conversion to R by Tom Short. }

@@ -40,7 +40,7 @@ In contrast to \code{spline}, \code{pchip} preserves the monotonicity of
   Fritsch, F. N. and Carlson, R. E., \dQuote{Monotone Piecewise Cubic
   Interpolation}, \emph{SIAM Journal on Numerical Analysis}, vol. 17, pp. 238-246, 1980.
   
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

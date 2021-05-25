@@ -47,9 +47,9 @@ Since \code{filter} is generic, it can be extended to call other filter types.
   The filtered signal, normally of the same length of the input signal \code{x}.
 }
 \references{ 
-\url{http://en.wikipedia.org/wiki/Digital_filter}
+\url{https://en.wikipedia.org/wiki/Digital_filter}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Tom Short, EPRI Solutions, Inc., (\email{tshort@eprisolutions.com}) }
 \seealso{ \code{\link[stats]{filter}} in the \pkg{stats} package, \code{\link{Arma}},

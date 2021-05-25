@@ -33,7 +33,7 @@ implementation of the filter.}
    \emph{Spectrum analysis -- a modern perspective},
    Proceedings of the IEEE, Vol 69, pp 1380-1419, Nov., 1981
 
- Octave \url{http://octave.sf.net}
+ Octave \url{https://octave.sourceforge.io/}
 }
 \author{Original Octave version by Paul Kienzle
     \email{pkienzle@users.sf.net} based on yulewalker.m

@@ -28,9 +28,9 @@ remez(n, f, a, w = rep(1.0, length(f) / 2),
   Design Techniques Using Weighted Chebyshev Approximations}, IEEE Proceedings,
   vol. 63, pp. 595 - 610, 1975.
   
-\url{http://en.wikipedia.org/wiki/Fir_filter} 
+\url{https://en.wikipedia.org/wiki/Fir_filter} 
   
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 
 }
 \author{ Original Octave version by Paul Kienzle. Conversion to R by Tom

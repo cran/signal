@@ -52,9 +52,9 @@ to its negligible amplitude errors. This window has low pass-band ripple, but hi
 Gade, S., Herlufsen, H. (1987) \dQuote{Use of weighting functions in DFT/FFT
 analysis (Part I)}, \emph{Bruel & Kjaer Technical Review} No. 3.
 
-\url{http://en.wikipedia.org/wiki/Windowed_frame}
+\url{https://en.wikipedia.org/wiki/Windowed_frame}
 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave versions by Paul Kienzle (\code{boxcar},
   \code{gausswin}, \code{triang}) and Andreas Weingessel

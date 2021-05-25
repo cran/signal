@@ -36,9 +36,9 @@ kaiserord(f, m, dev, Fs = 2)
   Oppenheim, A. V., Schafer, R. W., and Buck, J. R. (1999). 
     \emph{Discrete-time signal processing}. Upper Saddle River, N.J.: Prentice Hall.
 
-  \url{http://en.wikipedia.org/wiki/Kaiser_window}
+  \url{https://en.wikipedia.org/wiki/Kaiser_window}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
  }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@users.sf.net}. Conversion to R by Tom Short. }

@@ -50,9 +50,9 @@ needed there.
   \item{t}{ time.}
 }
 \references{ 
-  \url{http://en.wikipedia.org/wiki/Impulse_response}
+  \url{https://en.wikipedia.org/wiki/Impulse_response}
   
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Kurt Hornik and John W. Eaton.
  Conversion to R by Tom Short. }

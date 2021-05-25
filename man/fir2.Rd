@@ -25,7 +25,7 @@ fir2(n, f, m, grid_n = 512, ramp_n = grid_n/20, window = hamming(n + 1))
   The FIR filter coefficients, an array of \code{length(n+1)}, of class \code{Ma}.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle,
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

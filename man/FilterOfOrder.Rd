@@ -30,7 +30,7 @@ FilterOfOrder(n, Wc, type, \dots)
     of stop band ripple, depending on filter type (Chebyshev, etc.). }
 }
 \references{
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Tom Short }
 \seealso{ \code{\link{filter}}, \code{\link{butter}} and \code{\link{buttord}}

@@ -39,9 +39,9 @@ plane = c("z", "s"), \ldots)
 \references{ Proakis & Manolakis (1992). \emph{Digital Signal Processing}. New
   York: Macmillan Publishing Company.
 
-  \url{http://en.wikipedia.org/wiki/Butterworth_filter}
+  \url{https://en.wikipedia.org/wiki/Butterworth_filter}
   
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Modified by Doug Stewart. Conversion to R by Tom Short. }

@@ -191,7 +191,8 @@ ppval = function(pp, xi) {
     idx = lookup(pp$x[2:pp$n], xi) + 1
     dx = as.matrix(xi - pp$x[idx])
     dx = dx[,rep(1,pp$d)]
-    c = matrix(pp$P, pp$n, pp$d)
+    c = matrix(pp$P[1:(pp$n*pp$d)], pp$n, pp$d)
+    
     yi = c[idx, ]
     if (pp$k > 1)
       for (i  in 2:pp$k) {

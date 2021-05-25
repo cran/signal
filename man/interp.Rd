@@ -23,9 +23,9 @@ It uses an order \code{2*q*n+1} FIR filter to interpolate between samples.
 }
 \references{ 
 
-  \url{http://en.wikipedia.org/wiki/Upsampling}
+  \url{https://en.wikipedia.org/wiki/Upsampling}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

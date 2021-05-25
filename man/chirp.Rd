@@ -35,7 +35,7 @@ chirp(t, f0 = 0, t1 = 1, f1 = 100,
   Chirp signal, an array the same length as \code{t}.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle.
   Conversion to R by Tom Short. }

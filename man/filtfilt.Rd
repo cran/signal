@@ -45,7 +45,7 @@
   The filtered signal, normally the same length as the input signal \code{x}.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle,
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

@@ -37,7 +37,7 @@ class \code{'sgolayFilter'} (so it can be used with \code{filter}).}
   P. Flannery, \emph{Numerical Recipes in C: The Art of Scientific Computing} ,
   2nd edition, Cambridge Univ. Press, N.Y., 1992.
   
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@users.sf.net}. Modified by Pascal Dupuis. Conversion to R by Tom Short. }

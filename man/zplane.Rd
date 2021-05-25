@@ -32,9 +32,9 @@ Plot the poles and zeros of a model or filter.
   No value is returned.
 }
 \references{
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 
-  \url{http://en.wikipedia.org/wiki/Pole-zero_plot}
+  \url{https://en.wikipedia.org/wiki/Pole-zero_plot}
 }
 \author{ Tom Short }
 \seealso{ \code{\link{Arma}}, \code{\link{freqz}} }

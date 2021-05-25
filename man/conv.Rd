@@ -26,7 +26,7 @@ conv(x, y)
      \code{conv} returns the coefficients of the product polynomial.
 }
 \references{ 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

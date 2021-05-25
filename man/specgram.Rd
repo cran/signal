@@ -98,7 +98,7 @@ the image.
   \item{t}{ the time indices corresponding to the columns of S.}
 }
 \references{
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@users.sf.net}. Conversion to R by Tom Short. }

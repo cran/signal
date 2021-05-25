@@ -30,9 +30,9 @@ MedianFilter(n = 3)
   with \code{filter} to apply a median filter to a signal.
 }
 \references{
-  \url{http://en.wikipedia.org/wiki/Median_filter}
+  \url{https://en.wikipedia.org/wiki/Median_filter}
   
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Tom Short. }
 \seealso{ \code{\link{runmed}}, \code{\link{median}}, \code{\link{filter}} }

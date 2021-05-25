@@ -17,7 +17,7 @@ roots(x, method = c("polyroot", "eigen"))
   A complex array with the roots of the polynomial.
 }
 \references{
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{Original Octave version by Kurt Hornik. Conversion to R by Tom Short.}
 \seealso{\code{\link{polyroot}}, \code{\link{polyval}}, \code{\link{poly}}, \code{\link{conv}}}

@@ -69,9 +69,9 @@ not be a problem.
 \references{ Proakis & Manolakis (1992). \emph{Digital Signal Processing}. New York:
   Macmillan Publishing Company.
 
-  \url{http://en.wikipedia.org/wiki/Bilinear_transform}
+  \url{https://en.wikipedia.org/wiki/Bilinear_transform}
 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Conversion to R by Tom Short. }

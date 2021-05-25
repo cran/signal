@@ -50,9 +50,9 @@
 }
 \references{ Parks & Burrus (1987). \emph{Digital Filter Design}. New York: John Wiley & Sons, Inc.
 
-  \url{http://en.wikipedia.org/wiki/Chebyshev_filter}
+  \url{https://en.wikipedia.org/wiki/Chebyshev_filter}
   
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by Paul Kienzle
   \email{pkienzle@user.sf.net}. Modified by Doug Stewart. Conversion to R by Tom Short. }

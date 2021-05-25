@@ -32,7 +32,7 @@ ellipord(Wp, Ws, Rp, Rs)
 \references{
 Lamar, Marcus Vinicius, Notas de aula da disciplina TE 456 - Circuitos Analogicos II, UFPR, 2001/2002.
 
-Octave Forge \url{http://octave.sf.net}
+Octave Forge \url{https://octave.sourceforge.io/}
 
 }
 \author{ Original Octave version by Paulo Neis

@@ -67,7 +67,7 @@ needed there.
 
 }
 \references{ 
-  Octave Forge \url{http://octave.sf.net}
+  Octave Forge \url{https://octave.sourceforge.io/}
 }
 \author{ Original Octave version by John W. Eaton. Conversion to R by Tom Short. }
 \seealso{ \code{\link{filter}}, \code{\link{Arma}}, \code{\link{freqs}}
