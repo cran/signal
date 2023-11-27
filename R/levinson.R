@@ -24,10 +24,10 @@ levinson <- function(x, p=NULL){
         ref <- numeric(p)
         g <- -acf[2]/acf[1]
         a <- g
-        v <- Re( ( 1 - g * Conj(g) ) * acf[1] )
+        v <- Re( ( 1 - g * Conj(g)) * acf[1] )
         ref[1] <- g
         for(t in 2:p){
-            g <- - (acf[t+1] + a %*% acf[seq(t, 2, by=-1)]) / v
+            g <- - (acf[t+1] + c(t(a) %*% acf[seq(t, 2, by=-1)])) / v
             a <- c( (a + g * Conj(a[seq(t-1, 1, -1)])), g)
             v <- v * ( 1 - Re(g * Conj(g)) )
             ref[t] <- g

@@ -1,7 +1,7 @@
 Package: signal
 Title: Signal Processing
-Version: 0.7-7
-Date: 2021-05-24
+Version: 1.8-0
+Date: 2023-11-27
 Authors@R: c(person("Uwe", "Ligges", role = c("aut", "cre"), email="ligges@statistik.tu-dortmund.de", comment = "new maintainer"),
  person("Tom", "Short", role = "aut", email = "tshort@eprisolutions.com", comment="port to R"),
  person("Paul", "Kienzle", role = "aut", comment="majority of the original sources"),
@@ -33,7 +33,7 @@ Description: A set of signal processing functions originally written for 'Matlab
   includes interpolation functions.
 License: GPL-2
 NeedsCompilation: yes
-Packaged: 2021-05-24 23:53:43 UTC; ligges
+Packaged: 2023-11-27 10:01:26 UTC; ligges
 Author: Uwe Ligges [aut, cre] (new maintainer),
   Tom Short [aut] (port to R),
   Paul Kienzle [aut] (majority of the original sources),
@@ -57,4 +57,4 @@ Author: Uwe Ligges [aut, cre] (new maintainer),
   Andreas Weingessel [ctb]
 Maintainer: Uwe Ligges <ligges@statistik.tu-dortmund.de>
 Repository: CRAN
-Date/Publication: 2021-05-25 04:40:02 UTC
+Date/Publication: 2023-11-27 11:00:03 UTC

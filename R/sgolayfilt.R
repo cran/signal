@@ -55,7 +55,7 @@ sgolayfilt <- function(x, p = 3, n = p + 3 - p%%2, m = 0, ts = 1)  {
   ## seems the logical notation, reverse F[k+1,] so that antisymmetric
   ## sequences are used with the right sign.
   len = length(x)
-  if (class(p) == "sgolayFilter" || (!is.null(dim(p)) && dim(p) > 1)) {
+  if (inherits(p, "sgolayFilter") || (!is.null(dim(p)) && dim(p) > 1)) {
     F = p
     n = nrow(F)
   } else 

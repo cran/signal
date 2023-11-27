@@ -17,7 +17,17 @@
 	* minor update for reference output
 2015-05-31
 	* version 0.7-5
-	* use requireNAmespace() rather than library()
+	* use requireNamespace() rather than library()
 2015-07-29
 	* version 0.7-6
 	* also import from base packages
+2021-05-25
+	* version 0.7-7
+	* fix warnings for matrix(vec, n, k) with n*k != length(vec)
+	* update expected test results
+	* fix various URLs
+2023-11-27
+	* Update to version 1.8.0 to indicate this package is meant to be stable 
+	  (as it was for more than 8 years now)
+	* levinson does no longer warn for p > 2
+	
