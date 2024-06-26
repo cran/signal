@@ -1,5 +1,5 @@
 dc014894928f822ef55f72d16aae454b *ChangeLog
-c5c64100aefb0eca30ab8ac34eeae75a *DESCRIPTION
+8dd0d0fdb23866c6795d89a006e3cd41 *DESCRIPTION
 21c372f6539a1e177f8514ae71fc9881 *NAMESPACE
 2f5512a9c5d22704aaae2ca5e9315bab *R/bartlett.R
 d12cb7cdcc7d75f7f16e35d4d8777bd7 *R/bilinear.R
@@ -46,7 +46,7 @@ d88d5b61edaeb689c0b5ae692ea4145c *R/specgram.R
 98eb9c4c02860a80f583c245dd010aaf *R/triang.R
 314a9cbd4ead58c0548dac631fba69b3 *R/unwrap.R
 ea2c3a9563f5cf0298fc6cde2978cf12 *R/zplane.R
-181b5ac5a69bd3e3e542680739e88fd5 *build/partial.rdb
+aa5e5a2cbfaea3d9b6cdbe378ac48cee *build/partial.rdb
 f2eb20959bd46f29123db036a74ae25c *data/wav.RData
 16b1c82096c943bfc2388a65ae63ca41 *inst/CITATION
 7020b422de24e4ed1e7d0eeb795cb226 *inst/COPYRIGHTS
@@ -100,7 +100,7 @@ af1f3fdf5142fadf6ea722fcaed06955 *man/sgolayfilt.Rd
 584b0438a63f5d268b08cf1e1add5f84 *man/wav.Rd
 14c6190a1598fc007d38b73802601d15 *man/windowing.Rd
 ffaf08d4533fafbf9f395035f1bdcf4e *man/zplane.Rd
-35a3764e2d884b767550345ade67c757 *src/dpchim.f
+d2981f57674124d869dd33ac901402f4 *src/dpchim.f
 ef87bafd924b5ccea084c021ddd39fdb *src/dpchst.f
 374ec0cfb4ed58ab347117988811fc35 *src/remez.c
 d1b664845bb56994f2bfd3373ec082f4 *tests/TestLevinson.R

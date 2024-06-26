@@ -209,11 +209,14 @@ C
 C        SET D(I)=0 UNLESS DATA ARE STRICTLY MONOTONIC.
 C
          D(1,I) = ZERO
-         IF ( DPCHST(DEL1,DEL2) )  42, 41, 45
+C     formerly         IF ( DPCHST(DEL1,DEL2) )  42, 41, 45
+         zz = DPCHST(DEL1,DEL2)
+         if (zz .lt. 0.0) goto 42
+         if (zz .gt. 0.0) goto 45
 C
 C        COUNT NUMBER OF CHANGES IN DIRECTION OF MONOTONICITY.
 C
-   41    CONTINUE
+C   41    CONTINUE
          IF (DEL2 .EQ. ZERO)  GO TO 50
          IF ( DPCHST(DSAVE,DEL2) .LT. ZERO)  IERR = IERR + 1
          DSAVE = DEL2
